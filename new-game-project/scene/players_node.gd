@@ -1,6 +1,6 @@
 extends Node2D
 
-var Scene = "res://scene/player.tscn"
+var Scene = "res://Scene/player.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +11,7 @@ func _ready() -> void:
 		add_child(Child)
 		Child.name = "Player" + str(i)
 		if Options.IncludeKBM:
-			Child.ConType = i
+			Child.UpdateConType(i)
 		else:
-			Child.ConType = i + 1
+			Child.UpdateConType(i + 1)
 		i+=1

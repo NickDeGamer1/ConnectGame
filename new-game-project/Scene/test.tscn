@@ -1,32 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfjefajdsmltd"]
+[gd_scene load_steps=3 format=3 uid="uid://dfjefajdsmltd"]
 
-[ext_resource type="PackedScene" uid="uid://cne8v4uqsvxij" path="res://scene/player.tscn" id="1_javgr"]
+[ext_resource type="PackedScene" uid="uid://cne8v4uqsvxij" path="res://Scene/player.tscn" id="1_javgr"]
 [ext_resource type="Script" path="res://scene/CameraFallow.gd" id="2_m8oru"]
-[ext_resource type="Texture2D" uid="uid://dyk2l21rq6aid" path="res://icon.svg" id="3_bytpd"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_04wtl"]
-size = Vector2(125, 125)
 
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(532, 585)
-WepType = 0
 
 [node name="Player2" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(532, 585)
 ConType = 2
-WepType = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
 script = ExtResource("2_m8oru")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(758, 416)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_04wtl")
-
-[node name="Icon" type="Sprite2D" parent="StaticBody2D"]
-texture = ExtResource("3_bytpd")
