@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=15 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
+[ext_resource type="Script" path="res://Scene/world.gd" id="1_u23qa"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
 [ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://Scene/tree.tscn" id="4_quntu"]
@@ -445,6 +446,7 @@ _data = {
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -1)
+script = ExtResource("1_u23qa")
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(78, -4)
