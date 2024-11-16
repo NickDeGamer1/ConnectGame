@@ -34,7 +34,7 @@ func _ready() -> void:
 		2:
 			WepPath = "res://Scenes/Ax.tscn"
 		3:
-			WepPath = "res://Scenes/Sword.tscn"
+			WepPath = "res://Scenes/Bow.tscn"
 	var c1 = load(WepPath)
 	$Weapon/Area2D/WeaponPos.add_child(c1.instantiate())
 
@@ -50,9 +50,11 @@ func _physics_process(_delta: float) -> void:
 		var CX = Input.get_joy_axis(ConType-1, JOY_AXIS_RIGHT_X)
 		var CY = Input.get_joy_axis(ConType-1, JOY_AXIS_RIGHT_Y)
 		
-		if abs(CX) > 0.2 and abs(CY) > 0.3:
-			$EyeHolder/Eyes.centered = false
-			$Weapon.rotation =  atan2(CY, CX)
+		
+		
+		#if abs(CX) > 0.2 and abs(CY) > 0.3:
+		$EyeHolder/Eyes.centered = false
+		$Weapon.rotation =  atan2(CY, CX)
 		#else:
 			#$EyeHolder/Eyes.centered = true
 	

@@ -121,7 +121,7 @@ size = Vector2(50, 100)
 [node name="Player" type="Area2D" groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_drpok")
-WepType = 1
+WepType = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dai1w")
