@@ -415,7 +415,7 @@ gradient = SubResource("Gradient_8ewx0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kw860"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(218, 268)
+position = Vector2(3, -1)
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(78, -4)

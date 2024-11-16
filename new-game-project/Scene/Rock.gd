@@ -8,7 +8,7 @@ func _on_area_entered(area: Area2D) -> void:
 	CheckHealth()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("K"):
+	if event.is_action_pressed("ui_accept"):
 		_on_area_entered(null)
 		print(health)
 

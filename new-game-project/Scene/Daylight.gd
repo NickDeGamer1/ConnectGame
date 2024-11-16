@@ -1,4 +1,4 @@
 extends PointLight2D
 
-func Daytime():
-	if TimeOfDay
+#func Daytime():
+#	if TimeOfDay
