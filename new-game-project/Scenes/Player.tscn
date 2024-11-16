@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cne8v4uqsvxij"]
+
+[ext_resource type="Texture2D" uid="uid://dyk2l21rq6aid" path="res://icon.svg" id="1_b1xud"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_drpok"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dai1w"]
+radius = 62.0322
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_52eig"]
+size = Vector2(50, 100)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_drpok")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b1xud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_dai1w")
+
+[node name="Weapon" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="Weapon"]
+position = Vector2(100, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D"]
+shape = SubResource("RectangleShape2D_52eig")
