@@ -8,10 +8,12 @@ func CheckHealth():
 	if health <= 0:
 		visible = false
 		addResource()
+		get_node("../Wallmanager").UpdateWall()
 
 func _ready() -> void:
 	health = max_health
 	DayCycle.period_changed.connect(_on_period_changed)
+
 
 
 func addResource():

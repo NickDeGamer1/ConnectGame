@@ -4,20 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://vhnempqv34us" path="res://summer_plains_v1.0_plus/wall_tiles.png" id="1_ko43h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob0r7"]
-size = Vector2(61, 30)
+size = Vector2(62.5, 30)
 
-[node name="Node2D" type="Area2D"]
+[node name="Wall with Health" type="Area2D" groups=["Wall"]]
 script = ExtResource("1_kl2ti")
 
-[node name="Wall" type="Area2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 1)
+shape = SubResource("RectangleShape2D_ob0r7")
 
-[node name="TileMapLayer" type="Sprite2D" parent="Wall"]
+[node name="TileMapLayer" type="Sprite2D" parent="."]
 texture = ExtResource("1_ko43h")
 region_enabled = true
 region_rect = Rect2(192.516, 0, 63.4844, 27.5363)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_ob0r7")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -15,6 +15,7 @@ func _on_area_entered(area: Area2D) -> void:
 	health -= 20  #area.dmg
 	CheckHealth()
 
+
 func addResource():
 	PlayerShared.ResourceWood += 1
 	print(PlayerShared.ResourceWood)
