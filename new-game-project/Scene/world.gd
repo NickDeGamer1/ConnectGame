@@ -78,3 +78,4 @@ func _clear_enemies():
 		if enemy:
 			enemy.queue_free()
 	enemies_spawned.clear()
+# r
