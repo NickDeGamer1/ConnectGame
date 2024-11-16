@@ -17,12 +17,11 @@ const ATTACK_DAMAGE = 25
 var attack_timer = 0.0
 var attacking = false
 
-# Health and speed (make these editable if you want to scale them)
-var health = 100  # Default health value, can be modified
+# Health and speed
+var health = 100  # Default health value
 var speed = SPEED  # Speed of the enemy
 
 func _ready():
-	# Connect the signal for hitbox interaction
 	hitbox_area.connect("body_entered", Callable(self, "_on_body_entered"))
 	make_path_to_oakley()
 
