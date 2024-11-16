@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cne8v4uqsvxij"]
+[gd_scene load_steps=29 format=3 uid="uid://cne8v4uqsvxij"]
 
 [ext_resource type="Script" path="res://scene/player.gd" id="1_drpok"]
 [ext_resource type="Texture2D" uid="uid://xj3riufbpbl8" path="res://BotSprites/BlueBot/Untitled_Artwork-1.png" id="2_7gsfj"]
@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://fvlfaql3eahb" path="res://BotSprites/PurpleBot/Untitled_Artwork-2.png" id="15_6r065"]
 [ext_resource type="Texture2D" uid="uid://den62wkg6ivdp" path="res://BotSprites/PurpleBot/Untitled_Artwork-3.png" id="16_apxmv"]
 [ext_resource type="Texture2D" uid="uid://sxgcj6wgof67" path="res://BotSprites/PurpleBot/Untitled_Artwork-4.png" id="17_00gqn"]
-[ext_resource type="Theme" path="res://themes/ThemeGood.tres" id="24_k44tp"]
+[ext_resource type="Theme" uid="uid://cf05qslyrcgw" path="res://themes/ThemeGood.tres" id="24_k44tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crysh"]
 size = Vector2(40, 60)
@@ -122,59 +122,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52eig"]
 size = Vector2(50, 100)
 
-[sub_resource type="Gradient" id="Gradient_o3x4y"]
-colors = PackedColorArray(0, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_w2xhp"]
-gradient = SubResource("Gradient_o3x4y")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.8)
-metadata/_snap_enabled = true
-
-[sub_resource type="Gradient" id="Gradient_3fayi"]
-colors = PackedColorArray(1, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_txlts"]
-gradient = SubResource("Gradient_3fayi")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.8)
-metadata/_snap_enabled = true
-
-[sub_resource type="Gradient" id="Gradient_50b5r"]
-colors = PackedColorArray(0, 1, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ex6sq"]
-gradient = SubResource("Gradient_50b5r")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.8)
-metadata/_snap_enabled = true
-
-[sub_resource type="Gradient" id="Gradient_7ym0x"]
-colors = PackedColorArray(1, 1, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_3mh80"]
-gradient = SubResource("Gradient_7ym0x")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.8)
-metadata/_snap_enabled = true
-
-[sub_resource type="Gradient" id="Gradient_xmw6y"]
-colors = PackedColorArray(0.539323, 0.00678393, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7prgs"]
-gradient = SubResource("Gradient_xmw6y")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.8)
-metadata/_snap_enabled = true
-
 [node name="Player" type="Area2D" groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_drpok")
+WepType = 3
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
 shape = SubResource("RectangleShape2D_crysh")
@@ -227,32 +178,5 @@ max_value = 150.0
 step = 1.0
 value = 150.0
 show_percentage = false
-
-[node name="Lights" type="Node2D" parent="."]
-
-[node name="PC" type="PointLight2D" parent="Lights"]
-visible = false
-texture = SubResource("GradientTexture2D_w2xhp")
-texture_scale = 3.0
-
-[node name="C0" type="PointLight2D" parent="Lights"]
-visible = false
-texture = SubResource("GradientTexture2D_txlts")
-texture_scale = 3.0
-
-[node name="C1" type="PointLight2D" parent="Lights"]
-visible = false
-texture = SubResource("GradientTexture2D_ex6sq")
-texture_scale = 3.0
-
-[node name="C2" type="PointLight2D" parent="Lights"]
-visible = false
-texture = SubResource("GradientTexture2D_3mh80")
-texture_scale = 3.0
-
-[node name="C3" type="PointLight2D" parent="Lights"]
-visible = false
-texture = SubResource("GradientTexture2D_7prgs")
-texture_scale = 3.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
