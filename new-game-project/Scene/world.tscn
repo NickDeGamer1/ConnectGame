@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=21 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://c3cac4tnf2tyo" path="res://Texture/Oakley.png" id="7_vgyrq"]
 [ext_resource type="PackedScene" uid="uid://dghnv5e7ghqbo" path="res://Scene/PlayersNode.tscn" id="8_7egnc"]
 [ext_resource type="Script" path="res://Scene/Oakley.gd" id="8_ndm67"]
+[ext_resource type="PackedScene" uid="uid://bofsbicr30hy6" path="res://Scene/Wall with health.tscn" id="10_blraw"]
+[ext_resource type="Script" path="res://Scene/wallmanager.gd" id="11_uc8j0"]
+[ext_resource type="PackedScene" uid="uid://d4dv6r4okjs74" path="res://Scene/Wall with healthV.tscn" id="12_4ci2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -470,7 +473,7 @@ tile_set = SubResource("TileSet_yeyko")
 position = Vector2(158, 219)
 
 [node name="Tree2" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(485, 791)
+position = Vector2(377, 859)
 
 [node name="Tree3" parent="." instance=ExtResource("4_quntu")]
 position = Vector2(691, 1036)
@@ -485,10 +488,10 @@ position = Vector2(1001, 81)
 position = Vector2(1203, 267)
 
 [node name="Tree7" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(234, 652)
+position = Vector2(217, 637)
 
 [node name="Tree8" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(950, 508)
+position = Vector2(1228, 461)
 
 [node name="Tree9" parent="." instance=ExtResource("4_quntu")]
 position = Vector2(1248, 708)
@@ -500,10 +503,10 @@ position = Vector2(316, 209)
 position = Vector2(192, 766)
 
 [node name="Rock3" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(1070, 888)
+position = Vector2(1015, 1117)
 
 [node name="Rock4" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(965, 605)
+position = Vector2(1001, 421)
 
 [node name="Rock5" parent="." instance=ExtResource("5_xnw5d")]
 position = Vector2(1402, 254)
@@ -523,7 +526,7 @@ libraries = {
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(738, 294)
+position = Vector2(347, 177)
 script = ExtResource("8_ndm67")
 
 [node name="Oakley" type="Sprite2D" parent="StaticBody2D"]
@@ -532,13 +535,14 @@ scale = Vector2(2, 2)
 texture = ExtResource("7_vgyrq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 4)
 shape = SubResource("RectangleShape2D_axakc")
 
 [node name="Tree10" parent="." instance=ExtResource("4_quntu")]
 position = Vector2(1172, 1030)
 
 [node name="Tree11" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(247, 1030)
+position = Vector2(156, 1030)
 
 [node name="Tree12" parent="." instance=ExtResource("4_quntu")]
 position = Vector2(1855, 451)
@@ -563,3 +567,70 @@ position = Vector2(1949, 986)
 
 [node name="Rock10" parent="." instance=ExtResource("5_xnw5d")]
 position = Vector2(1684, 1235)
+
+[node name="Wallmanager" type="Node" parent="."]
+script = ExtResource("11_uc8j0")
+
+[node name="Wall with Health1" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(911, 408)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health2" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(661, 408)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health3" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(874, 476)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health4" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(953, 571)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health5" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(953, 719)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health6" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(874, 780)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health7" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(696, 476)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health8" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(612, 555)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health9" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(610, 709)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health10" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(686, 780)
+scale = Vector2(3, 3)
+
+[node name="Wall with Health11" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(1013, 535)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health12" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(1013, 717)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health13" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(907, 823)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health14" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(549, 534)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health15" parent="." instance=ExtResource("12_4ci2y")]
+position = Vector2(547, 718)
+scale = Vector2(4, 4)
+
+[node name="Wall with Health16" parent="." instance=ExtResource("10_blraw")]
+position = Vector2(657, 823)
+scale = Vector2(4, 4)

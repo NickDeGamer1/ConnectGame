@@ -29,6 +29,7 @@ window/size/viewport_height=1080
 [global_group]
 
 Players="The Players"
+Wall=""
 
 [input]
 
