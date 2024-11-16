@@ -11,5 +11,14 @@ config_version=5
 [application]
 
 config/name="New Game Project"
+run/main_scene="res://autoload/test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DayCycle="*res://autoload/day_cycle.gd"
+
+[dotnet]
+
+project/assembly_name="New Game Project"
