@@ -1,21 +1,10 @@
-extends Node
+extends Node2D
 
-enum GameMode {
-	TITLE_SCREEN,
-	GAMEPLAY,
-	OPTIONS,
-	SETTINGS,
-	CREDITS
-}
-
-var mode: 
-	set(_mode):
-		mode = _mode
-		_switch_mode(_mode)
+var target : Node2D
+var 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DayCycle._start(DayCycle.TimeOfDay.MORNING)
 	pass # Replace with function body.
 
 
@@ -23,5 +12,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _switch_mode( mode:GameMode ):
+
+func retarget():
 	pass
+
+
+func approach_target():
+	if target == null or self.get_tree() != target.get_tree():
+		return
+	
+	
