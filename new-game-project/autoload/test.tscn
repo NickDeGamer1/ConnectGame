@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfikmreip25nh"]
-
-[ext_resource type="Script" path="res://autoload/test.gd" id="1_ddw20"]
-
-[node name="Node" type="Node"]
-script = ExtResource("1_ddw20")
