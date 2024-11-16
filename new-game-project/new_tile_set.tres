@@ -1,10 +1,12 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://dtna1472lbwdu"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://dtna1472lbwdu"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_13os3"]
 [ext_resource type="Texture2D" uid="uid://cs0gchsdiu7li" path="res://Texture/TX Tileset Grass.png" id="2_3wx1h"]
+[ext_resource type="Texture2D" uid="uid://vhnempqv34us" path="res://summer_plains_v1.0_plus/wall_tiles.png" id="3_esmpf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8lhuu"]
 texture = ExtResource("1_13os3")
+texture_region_size = Vector2i(32, 32)
 14:0/0 = 0
 15:0/0 = 0
 24:0/0 = 0
@@ -619,7 +621,14 @@ texture_region_size = Vector2i(32, 32)
 14:15/0 = 0
 15:15/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbf6g"]
+texture = ExtResource("3_esmpf")
+texture_region_size = Vector2i(32, 32)
+6:1/0 = 0
+7:1/0 = 0
+
 [resource]
 tile_size = Vector2i(32, 32)
 sources/1 = SubResource("TileSetAtlasSource_8lhuu")
 sources/2 = SubResource("TileSetAtlasSource_ea226")
+sources/3 = SubResource("TileSetAtlasSource_kbf6g")
