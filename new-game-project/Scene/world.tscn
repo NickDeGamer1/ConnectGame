@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=11 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
-[ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://Scene/tree.tscn" id="4_quntu"]
-[ext_resource type="PackedScene" uid="uid://72g3kyo1fxfb" path="res://Scene/rock.tscn" id="5_xnw5d"]
+[ext_resource type="PackedScene" path="res://Scene/tree.tscn" id="4_quntu"]
+[ext_resource type="PackedScene" path="res://Scene/rock.tscn" id="5_xnw5d"]
+[ext_resource type="Script" path="res://npc.gd" id="6_fkdja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -388,6 +389,11 @@ tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_6ax3r")
 sources/4 = SubResource("TileSetAtlasSource_jjb10")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_pcdsl"]
+vertices = PackedVector2Array(1374.96, -115.313, 1357.19, 784.133, -468.031, 808.867, -509.883, 418.523, -449.344, 129.688, -293.883, -300.273, 1284.11, -362.719)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-301, -310, 1291, -373, 1385, -117, 1367, 794, -477, 819, -520, 418, -459, 127)])
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -1)
 
@@ -403,6 +409,9 @@ tile_set = ExtResource("3_61kkn")
 position = Vector2(33, -38)
 tile_map_data = PackedByteArray("AAD4/wAABAAAAAAAAAD4/wEAAgAEAA8AAAD4/wQABAAAAAQAAAD5/wQABAABAAQAAAD6/wIABAAAAAQAAAD6/wQAAgAEAA8AAAD7/wQABAADAAQAAAD8/wMABAAEAAMAAAD8/wQABAAEAAQAAAAJAPv/BAAAAAAAAAAMAP//BAADAAQAAAANAPv/BAAEAAAAAAANAPz/BAAEAAEAAAANAP7/BAAEAAMAAAANAP//BAAEAAQAAAAXAAgABAAAAAQAAAAYAAgABAABAAQAAAAaAAgABAADAAQAAAAbAAgABAAEAAQAAAAdAA8ABAAAAAAAAAAdABMABAAAAAQAAAAeABMABAABAAQAAAAgABMABAADAAQAAAAhABMABAAEAAQAAAABABQABAAFAAQAAAADABQABAAHAAQAAAD5/w8ABAAFAAQAAAD7/w8ABAAHAAQAAAANABMABAAFAAQAAAAPABMABAAHAAQAAAAVAPv/BAAJAAAAAAAVAP//AgAFAA8AAAAWAPv/BAAKAAAAAAATAPv/BAAKAAAAAAAUAPv/BAALAAAAAAAXAPn/BAAJAAAAAAAXAP3/BAAJAAQAAAAZAPn/BAALAAAAAAAZAP3/BAALAAQAAAAcAP3/BAAJAAAAAAAaAPn/BAAJAAAAAAAbAPn/BAAKAAAAAAAcAPn/BAALAAAAAAAYAAEABAAJAAQAAAAcAAEABAAJAAQAAAAeAP3/BAALAAAAAAAeAAEABAALAAQAAAAbABIAAgAFAA8AAAAWAA8AAgAFAA8AAAAhAAQAAgAFAA8AAAASAPv/AgAFAA8AAAD///v/AgAFAA8AAAAEAAEAAgAFAA8AAAD7/wgAAgAFAA8AAAD4/woAAgAFAA8AAAADAPn/BAAJAAAAAAAEAPn/BAAKAAAAAAAFAPn/BAALAAAAAAD6//7/BAAAAAAAAAD+//7/BAAEAAAAAAD+/wIABAAEAAQAAAD9/wMAAgAEAA8AAAAEAAcAAgALAAkAAAAEAAgAAgALAAoAAAAEAAkAAgALAAgAAAAFAAcAAgAMAAkAAAAFAAgAAgAMAAoAAAAFAAkAAgAMAAgAAAAGAAcAAgANAAkAAAAGAAgAAgANAAoAAAAGAAkAAgANAAgAAAAEAAoAAgALAAkAAAAEAAsAAgALAAoAAAAFAAoAAgAMAAkAAAAFAAsAAgAMAAoAAAAGAAoAAgANAAkAAAAGAAsAAgANAAoAAAAHAAkAAgALAAgAAAAHAAoAAgALAAkAAAAHAAsAAgALAAoAAAAIAAkAAgAMAAgAAAAIAAoAAgAMAAkAAAAIAAsAAgAMAAoAAAAJAAkAAgANAAgAAAAJAAoAAgANAAkAAAAJAAsAAgANAAoAAAAHAAYAAgALAAgAAAAHAAcAAgALAAkAAAAHAAgAAgALAAoAAAAIAAYAAgAMAAgAAAAIAAcAAgAMAAkAAAAIAAgAAgAMAAoAAAAJAAYAAgANAAgAAAAJAAcAAgANAAkAAAAJAAgAAgANAAoAAAAEAAYAAgALAAgAAAAFAAYAAgAMAAgAAAAGAAYAAgANAAgAAAD7/wIABAABAAQAAAA=")
 tile_set = SubResource("TileSet_yeyko")
+
+[node name="NavRegion" type="NavigationRegion2D" parent="TileMap"]
+navigation_polygon = SubResource("NavigationPolygon_pcdsl")
 
 [node name="Tree" parent="." instance=ExtResource("4_quntu")]
 position = Vector2(-40, -34)
@@ -448,3 +457,6 @@ position = Vector2(1204, 1)
 
 [node name="Rock6" parent="." instance=ExtResource("5_xnw5d")]
 position = Vector2(1228, 507)
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("6_fkdja")
