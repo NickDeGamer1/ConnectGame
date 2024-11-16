@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
 [ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://Scene/tree.tscn" id="4_quntu"]
 [ext_resource type="PackedScene" uid="uid://72g3kyo1fxfb" path="res://Scene/rock.tscn" id="5_xnw5d"]
-[ext_resource type="Script" path="res://Scene/Daylight.gd" id="6_vqbwi"]
+[ext_resource type="Script" path="res://Scene/day_and_night_cycle.gd" id="6_st5r6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -389,21 +389,59 @@ tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_6ax3r")
 sources/4 = SubResource("TileSetAtlasSource_jjb10")
 
-[sub_resource type="Gradient" id="Gradient_jfwap"]
-offsets = PackedFloat32Array(0.487013)
-colors = PackedColorArray(1, 1, 1, 0.8)
+[sub_resource type="Animation" id="Animation_wxsak"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.380303, 0.425974, 1, 1)]
+}
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7aamy"]
-gradient = SubResource("Gradient_jfwap")
-fill_from = Vector2(1, 0)
-fill_to = Vector2(0, 0)
+[sub_resource type="Animation" id="Animation_51y44"]
+resource_name = "Day to Night"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333334, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0.380303, 0.425974, 1, 1)]
+}
 
-[sub_resource type="Gradient" id="Gradient_8ewx0"]
-offsets = PackedFloat32Array(0.551948)
-colors = PackedColorArray(0, 0, 0.537255, 1)
+[sub_resource type="Animation" id="Animation_4qukd"]
+resource_name = "Night to Day"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.380303, 0.425974, 1, 1), Color(1, 1, 1, 1)]
+}
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_b6q8i"]
-gradient = SubResource("Gradient_8ewx0")
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ih3mo"]
+_data = {
+"Day to Night": SubResource("Animation_51y44"),
+"Night to Day": SubResource("Animation_4qukd"),
+"RESET": SubResource("Animation_wxsak")
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -1)
@@ -466,16 +504,11 @@ position = Vector2(1204, 1)
 [node name="Rock6" parent="." instance=ExtResource("5_xnw5d")]
 position = Vector2(1228, 507)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(533.5, 216.5)
-scale = Vector2(44.6875, 28.7216)
-texture = SubResource("GradientTexture2D_7aamy")
-texture_scale = 0.55
-script = ExtResource("6_vqbwi")
+[node name="Day and Night Cycle" type="CanvasModulate" parent="."]
+color = Color(0.380303, 0.425974, 1, 1)
+script = ExtResource("6_st5r6")
 
-[node name="PointLight2D2" type="PointLight2D" parent="."]
-visible = false
-position = Vector2(534.075, 202.5)
-scale = Vector2(42.8452, 1885.45)
-texture = SubResource("GradientTexture1D_b6q8i")
-texture_scale = 50.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Day and Night Cycle"]
+libraries = {
+"": SubResource("AnimationLibrary_ih3mo")
+}
