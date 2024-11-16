@@ -1,7 +1,5 @@
 extends Prop
 
-@export var ResourceWood:int = 0
-
 func _init() -> void:
 	max_health = 15
 
@@ -18,5 +16,5 @@ func _on_area_entered(area: Area2D) -> void:
 	CheckHealth()
 
 func addResource():
-	ResourceWood += 1
-	print(ResourceWood)
+	PlayerShared.ResourceWood += 1
+	print(PlayerShared.ResourceWood)

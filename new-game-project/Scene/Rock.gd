@@ -14,5 +14,5 @@ func _input(event: InputEvent) -> void:
 
 
 func addResource():
-	ResourceStone += 1
-	print(ResourceStone)
+	PlayerShared.ResourceStone += 1
+	print(PlayerShared.ResourceStone)

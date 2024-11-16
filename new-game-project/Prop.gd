@@ -3,7 +3,6 @@ class_name Prop
 
 @export var max_health := 25
 @export var health:int = 25
-@export var ResourceStone:int = 0
 
 func CheckHealth():
 	if health <= 0:
