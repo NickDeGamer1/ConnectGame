@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=13 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" path="res://Scene/tree.tscn" id="4_quntu"]
 [ext_resource type="PackedScene" path="res://Scene/rock.tscn" id="5_xnw5d"]
 [ext_resource type="Script" path="res://npc.gd" id="6_fkdja"]
+[ext_resource type="Texture2D" uid="uid://kbcuujtol0pp" path="res://BotSprites/Yellow bot/Untitled_Artwork-2.png" id="7_l6xaf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -394,6 +395,8 @@ vertices = PackedVector2Array(1374.96, -115.313, 1357.19, 784.133, -468.031, 808
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-301, -310, 1291, -373, 1385, -117, 1367, 794, -477, 819, -520, 418, -459, 127)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuyum"]
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -1)
 
@@ -458,5 +461,13 @@ position = Vector2(1204, 1)
 [node name="Rock6" parent="." instance=ExtResource("5_xnw5d")]
 position = Vector2(1228, 507)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="NPCTest" type="CharacterBody2D" parent="." node_paths=PackedStringArray("target")]
+position = Vector2(638, 135)
 script = ExtResource("6_fkdja")
+target = NodePath("../Tree")
+
+[node name="Sprite2D" type="Sprite2D" parent="NPCTest"]
+texture = ExtResource("7_l6xaf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPCTest"]
+shape = SubResource("RectangleShape2D_wuyum")
