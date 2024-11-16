@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=14 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
 [ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://Scene/tree.tscn" id="4_quntu"]
 [ext_resource type="PackedScene" uid="uid://72g3kyo1fxfb" path="res://Scene/rock.tscn" id="5_xnw5d"]
+[ext_resource type="Script" path="res://Scene/Daylight.gd" id="6_vqbwi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -470,6 +471,7 @@ position = Vector2(533.5, 216.5)
 scale = Vector2(44.6875, 28.7216)
 texture = SubResource("GradientTexture2D_7aamy")
 texture_scale = 0.55
+script = ExtResource("6_vqbwi")
 
 [node name="PointLight2D2" type="PointLight2D" parent="."]
 visible = false
