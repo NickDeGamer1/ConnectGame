@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=18 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://Scene/day_and_night_cycle.gd" id="6_st5r6"]
 [ext_resource type="Texture2D" uid="uid://c3cac4tnf2tyo" path="res://Texture/Oakley.png" id="7_vgyrq"]
 [ext_resource type="PackedScene" uid="uid://dghnv5e7ghqbo" path="res://Scene/PlayersNode.tscn" id="8_7egnc"]
+[ext_resource type="Script" path="res://Scene/Oakley.gd" id="8_ndm67"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -452,7 +453,8 @@ size = Vector2(128, 128)
 position = Vector2(3, -1)
 
 [node name="TileMap" type="Node2D" parent="."]
-position = Vector2(78, -4)
+position = Vector2(394, 306)
+scale = Vector2(1.48927, 1.3462)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
 position = Vector2(25, -7)
@@ -465,49 +467,49 @@ tile_map_data = PackedByteArray("AAD4/wAABAAAAAAAAAD4/wEAAgAEAA8AAAD4/wQABAAAAAQ
 tile_set = SubResource("TileSet_yeyko")
 
 [node name="Tree" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(-40, -34)
+position = Vector2(158, 219)
 
 [node name="Tree2" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(287, 538)
+position = Vector2(485, 791)
 
 [node name="Tree3" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(554, 487)
+position = Vector2(691, 1036)
 
 [node name="Tree4" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(332, -136)
+position = Vector2(530, 117)
 
 [node name="Tree5" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(803, -172)
+position = Vector2(1001, 81)
 
 [node name="Tree6" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(1005, 14)
+position = Vector2(1203, 267)
 
 [node name="Tree7" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(36, 399)
+position = Vector2(234, 652)
 
 [node name="Tree8" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(752, 255)
+position = Vector2(950, 508)
 
 [node name="Tree9" parent="." instance=ExtResource("4_quntu")]
-position = Vector2(1050, 455)
+position = Vector2(1248, 708)
 
 [node name="Rock" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(118, -44)
+position = Vector2(316, 209)
 
 [node name="Rock2" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(-16, 611)
+position = Vector2(192, 766)
 
 [node name="Rock3" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(872, 635)
+position = Vector2(1070, 888)
 
 [node name="Rock4" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(767, 352)
+position = Vector2(965, 605)
 
 [node name="Rock5" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(1204, 1)
+position = Vector2(1402, 254)
 
 [node name="Rock6" parent="." instance=ExtResource("5_xnw5d")]
-position = Vector2(1228, 507)
+position = Vector2(1426, 760)
 
 [node name="PlayersNode" parent="." instance=ExtResource("8_7egnc")]
 position = Vector2(524, 234)
@@ -521,7 +523,8 @@ libraries = {
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(748, 365)
+position = Vector2(738, 294)
+script = ExtResource("8_ndm67")
 
 [node name="Oakley" type="Sprite2D" parent="StaticBody2D"]
 texture_filter = 1
@@ -530,3 +533,33 @@ texture = ExtResource("7_vgyrq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_axakc")
+
+[node name="Tree10" parent="." instance=ExtResource("4_quntu")]
+position = Vector2(1172, 1030)
+
+[node name="Tree11" parent="." instance=ExtResource("4_quntu")]
+position = Vector2(247, 1030)
+
+[node name="Tree12" parent="." instance=ExtResource("4_quntu")]
+position = Vector2(1855, 451)
+
+[node name="Tree13" parent="." instance=ExtResource("4_quntu")]
+position = Vector2(1747, 118)
+
+[node name="Tree14" parent="." instance=ExtResource("4_quntu")]
+position = Vector2(1737, 730)
+
+[node name="Rock7" parent="." instance=ExtResource("5_xnw5d")]
+position = Vector2(1643, 535)
+
+[node name="Rock8" parent="." instance=ExtResource("5_xnw5d")]
+position = Vector2(2033, 391)
+
+[node name="Rock9" parent="." instance=ExtResource("5_xnw5d")]
+position = Vector2(1626, 726)
+
+[node name="Tree15" parent="." instance=ExtResource("4_quntu")]
+position = Vector2(1949, 986)
+
+[node name="Rock10" parent="." instance=ExtResource("5_xnw5d")]
+position = Vector2(1684, 1235)
