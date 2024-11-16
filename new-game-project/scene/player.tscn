@@ -118,9 +118,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52eig"]
 size = Vector2(50, 100)
 
-[node name="Player" type="Area2D"]
+[node name="Player" type="Area2D" groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_drpok")
+WepType = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_dai1w")
@@ -136,7 +137,11 @@ animation = &"C0"
 position = Vector2(100, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/Area2D"]
+position = Vector2(-47, 0)
 shape = SubResource("RectangleShape2D_52eig")
+
+[node name="WeaponPos" type="Node2D" parent="Weapon/Area2D"]
+position = Vector2(-57, 0)
 
 [node name="EyeHolder" type="Node2D" parent="."]
 

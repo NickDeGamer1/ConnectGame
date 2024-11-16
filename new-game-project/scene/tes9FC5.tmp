@@ -7,13 +7,14 @@
 
 [node name="Player" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(532, 585)
-ConType = 1
-WepType = 2
 
 [node name="Player2" parent="." instance=ExtResource("1_javgr")]
-position = Vector2(532, 585)
+position = Vector2(1224, 598)
+ConType = 1
+
+[node name="Player3" parent="." instance=ExtResource("1_javgr")]
+position = Vector2(958, 756)
 ConType = 2
-WepType = 0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
