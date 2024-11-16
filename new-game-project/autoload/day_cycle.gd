@@ -6,26 +6,26 @@ extends Node
 ## This enum must not skip numbers! 
 ## It must start at index 0 and increment by 1!
 enum TimeOfDay {
-	MORNING = 0,
-	AFTERNOON,
+	DAY = 0,
+	DUSK,
 	NIGHT,
 	DAWN,
 }
 
 const duration = {
-	TimeOfDay.MORNING : 2.5,
-	TimeOfDay.AFTERNOON : 2.5,
-	TimeOfDay.NIGHT : 2.5,
-	TimeOfDay.DAWN : 1.5,
+	TimeOfDay.DAY : 6, #number is second counter
+	TimeOfDay.DUSK : 12,
+	TimeOfDay.NIGHT : 12,
+	TimeOfDay.DAWN : 3,
 }
 
-var current_period := TimeOfDay.MORNING
+var current_period := TimeOfDay.DAY
 var timer := Timer.new()
 
 signal period_changed(new_period:int)
 
 
-func _start( period := TimeOfDay.MORNING ):
+func _start( period := TimeOfDay.DAY ):
 	current_period = period
 	
 	timer.timeout.connect(_progress_period)
