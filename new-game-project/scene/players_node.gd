@@ -11,7 +11,7 @@ func _ready() -> void:
 		add_child(Child)
 		Child.name = "Player" + str(i)
 		if Options.IncludeKBM:
-			Child.UpdateConType(i)
+			Child.UpdateCon(i)
 		else:
-			Child.UpdateConType(i + 1)
+			Child.UpdateCon(i + 1)
 		i+=1

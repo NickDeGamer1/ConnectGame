@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var Speed = 10
+@export var Speed = 7.5
 @export var Health = 150
 @export var Alive:bool = true
 enum PNum {KBM, C1, C2, C3, C4, ONL}#Enums
@@ -15,6 +15,14 @@ var AnimPlay:bool = false
 
 
 func _ready() -> void:
+	
+	UpdateCon(ConType)
+	
+	UpdateWep(WepType)
+	
+
+func UpdateCon(Con):
+	ConType = Con
 	match ConType:
 		0:
 			WhatConToUse = "PC"
@@ -30,15 +38,18 @@ func _ready() -> void:
 			WhatConToUse = "ON"
 	$AnimatedSprite2D.play(WhatConToUse)
 	get_node("Lights/" + WhatConToUse).visible = true
+
+func UpdateWep(Wep):
+	WepType = Wep
 	match WepType:
 		0:
-			WepPath = "res://Scenes/Sword.tscn"
+			WepPath = "res://Scene/Sword.tscn"
 		1:
-			WepPath = "res://Scenes/Spear.tscn"
+			WepPath = "res://Scene/Spear.tscn"
 		2:
-			WepPath = "res://Scenes/Ax.tscn"
+			WepPath = "res://Scene/Ax.tscn"
 		3:
-			WepPath = "res://Scenes/Bow.tscn"
+			WepPath = "res://Scene/Bow.tscn"
 	var c1 = load(WepPath)
 	$Weapon/Area2D/WeaponPos.add_child(c1.instantiate())
 
