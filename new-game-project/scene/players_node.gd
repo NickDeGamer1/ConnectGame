@@ -15,5 +15,4 @@ func _ready() -> void:
 		else:
 			Child.UpdateCon(i + 1)
 		Child.add_to_group("Players")
-		print()
 		i+=1
