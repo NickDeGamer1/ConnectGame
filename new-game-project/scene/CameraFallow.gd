@@ -13,5 +13,5 @@ func _process(_delta: float) -> void:
 		AvgX += i.global_position.x
 		AvgY += i.global_position.y
 		
-	
-	global_position = Vector2(AvgX/Players.size(), AvgY/Players.size())
+	if Players.size() > 0:
+		global_position = Vector2(AvgX/Players.size(), AvgY/Players.size())
