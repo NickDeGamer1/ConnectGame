@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dfjefajdsmltd"]
 
-[ext_resource type="PackedScene" uid="uid://cne8v4uqsvxij" path="res://Scene/player.tscn" id="1_javgr"]
+[ext_resource type="PackedScene" uid="uid://cne8v4uqsvxij" path="res://scene/player.tscn" id="1_javgr"]
 [ext_resource type="Script" path="res://scene/CameraFallow.gd" id="2_m8oru"]
 [ext_resource type="PackedScene" uid="uid://ccwwdxivmd2di" path="res://enemy.tscn" id="3_nemuw"]
 

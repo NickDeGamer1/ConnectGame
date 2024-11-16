@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
-[ext_resource type="Script" path="res://Scene/world.gd" id="1_u23qa"]
+[ext_resource type="Script" path="res://scene/world.gd" id="1_u23qa"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
-[ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://Scene/tree.tscn" id="4_quntu"]
-[ext_resource type="PackedScene" uid="uid://72g3kyo1fxfb" path="res://Scene/rock.tscn" id="5_xnw5d"]
-[ext_resource type="Script" path="res://Scene/day_and_night_cycle.gd" id="6_st5r6"]
-[ext_resource type="Texture2D" path="res://Texture/Oakley.png" id="7_vgyrq"]
-[ext_resource type="PackedScene" uid="uid://w7iifgbfqnbe" path="res://Scene/PlayersNode.tscn" id="8_7egnc"]
+[ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://scene/tree.tscn" id="4_quntu"]
+[ext_resource type="PackedScene" path="res://scene/rock.tscn" id="5_xnw5d"]
+[ext_resource type="Script" path="res://scene/day_and_night_cycle.gd" id="6_st5r6"]
+[ext_resource type="Texture2D" uid="uid://c3cac4tnf2tyo" path="res://Texture/Oakley.png" id="7_vgyrq"]
+[ext_resource type="PackedScene" uid="uid://w7iifgbfqnbe" path="res://scene/PlayersNode.tscn" id="8_7egnc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
