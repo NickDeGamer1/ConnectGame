@@ -1,11 +1,17 @@
 extends StaticBody2D
-class_name Oakley
+@export var health:int = 250
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _on_area_entered(area: Area2D) -> void:
+	#if area.name.contains("monster"):
+	health -= 20  #area.dmg
+	CheckHealth()
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("the j"):
+		_on_area_entered(null)
+		print(health)
+		
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func CheckHealth():
+	if health <= 0:
+		queue_free()
