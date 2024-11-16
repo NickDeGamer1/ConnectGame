@@ -179,10 +179,10 @@ script = ExtResource("1_47spt")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 position = Vector2(38.6667, -28.8)
-scale = Vector2(1.066, 1)
+scale = Vector2(0.106, 0.1)
 sprite_frames = SubResource("SpriteFrames_nuoas")
 animation = &"orc_attack"
-frame = 3
+frame = 1
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
@@ -190,13 +190,15 @@ debug_enabled = true
 [node name="OrcHitboxArea" type="Area2D" parent="."]
 
 [node name="OrcRightHitbox" type="CollisionShape2D" parent="OrcHitboxArea"]
-position = Vector2(47.7, -28.6)
+position = Vector2(39.4667, -28.9)
 rotation = 4.71239
+scale = Vector2(0.1, 0.1)
 shape = SubResource("CapsuleShape2D_p742d")
 
-[node name="OrcRightHitbox2" type="CollisionShape2D" parent="OrcHitboxArea"]
-position = Vector2(32.5, -28.5)
+[node name="OrcLeftHitbox" type="CollisionShape2D" parent="OrcHitboxArea"]
+position = Vector2(38.2, -28.8667)
 rotation = 4.71239
+scale = Vector2(0.1, 0.1)
 shape = SubResource("CapsuleShape2D_p742d")
 disabled = true
 
@@ -205,5 +207,6 @@ wait_time = 0.1
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(40.0667, -28.7667)
+position = Vector2(38.8333, -28.8333)
+scale = Vector2(0.1, 0.1)
 shape = SubResource("CircleShape2D_fr2sm")
