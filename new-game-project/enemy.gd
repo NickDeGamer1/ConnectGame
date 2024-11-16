@@ -17,6 +17,10 @@ const ATTACK_DAMAGE = 25
 var attack_timer = 0.0
 var attacking = false
 
+# Health and speed (make these editable if you want to scale them)
+var health = 100  # Default health value, can be modified
+var speed = SPEED  # Speed of the enemy
+
 func _ready():
 	# Connect the signal for hitbox interaction
 	hitbox_area.connect("body_entered", Callable(self, "_on_body_entered"))
@@ -24,14 +28,14 @@ func _ready():
 
 func _physics_process(delta: float):
 	# Pathfinding
-	if player.position.distance_to(global_position) < ATTACK_RANGE:
+	if player and player.position.distance_to(global_position) < ATTACK_RANGE:
 		make_path_to_player()
 	else:
 		make_path_to_oakley()
 
 	# Move towards the target
 	var dir = to_local(nav_agent.get_next_path_position()).normalized()
-	velocity = dir * SPEED
+	velocity = dir * speed
 	move_and_slide()
 
 	# Attack cooldown
@@ -42,9 +46,15 @@ func _physics_process(delta: float):
 	update_animation(dir)
 
 func make_path_to_oakley():
+	if oakley == null:
+		print("no path to Oakley")
+		return
 	nav_agent.target_position = oakley.global_position
 
 func make_path_to_player():
+	if player == null:
+		print("no path to Player")
+		return
 	nav_agent.target_position = player.global_position
 
 func update_animation(dir: Vector2):
