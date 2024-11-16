@@ -12,6 +12,7 @@ var WepPath:String = "res://Scenes/Sword.tscn"
 var AnimPlay:bool = false
 @onready var PosBuff = global_position
 @onready var Cam = get_node("../Camera2D")
+var ShakeOut = false
 
 
 func _ready() -> void:
@@ -51,7 +52,7 @@ func UpdateWep(Wep):
 		3:
 			WepPath = "res://Scene/Bow.tscn"
 	var c1 = load(WepPath)
-	$Weapon/Area2D/WeaponPos.add_child(c1.instantiate())
+	$Weapon/ResourceTool/WeaponPos.add_child(c1.instantiate())
 
 func _physics_process(_delta: float) -> void:
 	if ConType == 0:#On KBM
@@ -119,7 +120,7 @@ func _physics_process(_delta: float) -> void:
 			$Weapon.rotation =  atan2(CY, CX)
 		
 		if Input.is_action_pressed("Weapon" + WhatConToUse):
-			$Weapon/Area2D/WeaponPos/Weapon.use()
+			$Weapon/ResourceTool/WeaponPos/Weapon.use()
 	
 	#$Weapon/Sprite2D2.global_rotation = 0
 	
@@ -156,7 +157,7 @@ func _physics_process(_delta: float) -> void:
 			$ShapeCast2D.target_position = Vector2(15,0)
 		
 		
-		if ConType != 5 and !$ShapeCast2D.is_colliding():
+		if ConType != 5 and !$ShapeCast2D.is_colliding() and !ShakeOut:
 			#Movement
 			if Input.is_action_pressed("Move_down" + WhatConToUse):
 				position.y+=Speed
@@ -169,12 +170,20 @@ func _physics_process(_delta: float) -> void:
 				
 			
 			if Input.is_action_pressed("Weapon" + WhatConToUse):
-				$Weapon/Area2D/WeaponPos/Weapon.use()
+				$Weapon/ResourceTool/WeaponPos/Weapon.use()
+		elif ShakeOut:
+			ShakeOutfunc()
 		
 	else:
 		$AnimatedSprite2D.rotation = PI/2
 		$AnimatedSprite2D.stop()
 		$EyeHolder.visible = false
+
+func ShakeOutfunc():
+	while get_overlapping_areas().size() > 0:
+		position.y += 2
+		await get_tree().create_timer(.2).timeout
+	ShakeOut = false
 
 func UpdateHealth():
 	$ProgressBar.value = Health
@@ -192,3 +201,9 @@ func UpdateHealth():
 func _on_body_entered(body: Node2D) -> void:
 	if body.name.contains("enemy"):
 		Health -= body.ATTACK_DAMAGE
+
+func Revive():
+	Alive = true
+
+func _on_area_entered(area: Area2D) -> void:
+	ShakeOut = true
