@@ -82,3 +82,43 @@ Move_rightC1={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":1,"axis":0,"axis_value":1.0,"script":null)
 ]
 }
+Move_upC2={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":2,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+Move_downC2={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":2,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+Move_leftC2={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":2,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+Move_rightC2={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":2,"axis":0,"axis_value":1.0,"script":null)
+]
+}
+Move_upC3={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":3,"axis":1,"axis_value":-1.0,"script":null)
+]
+}
+Move_downC3={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":3,"axis":1,"axis_value":1.0,"script":null)
+]
+}
+Move_leftC3={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":3,"axis":0,"axis_value":-1.0,"script":null)
+]
+}
+Move_rightC3={
+"deadzone": 0.5,
+"events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":3,"axis":0,"axis_value":1.0,"script":null)
+]
+}

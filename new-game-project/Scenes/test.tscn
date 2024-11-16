@@ -6,7 +6,11 @@
 
 [node name="Player" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(532, 585)
-ConType = 0
 
 [node name="Player2" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(1224, 598)
+ConType = 1
+
+[node name="Player3" parent="." instance=ExtResource("1_javgr")]
+position = Vector2(958, 756)
+ConType = 2

@@ -4,6 +4,8 @@ extends Area2D
 enum PNum {KBM, C1, C2, C3, C4, ONL}
 @export var ConType: PNum
 var WhatConToUse:String = "PC"
+var AnimPlay:bool = false
+@onready var PosBuff = global_position
 
 func _ready() -> void:
 	match ConType:
@@ -19,10 +21,9 @@ func _ready() -> void:
 			WhatConToUse = "C3"
 		5:
 			WhatConToUse = "ON"
+	$AnimatedSprite2D.play(WhatConToUse)
 
 func _physics_process(_delta: float) -> void:
-	
-	
 	if ConType == 0:#On KBM
 		var MP = get_viewport().get_mouse_position()
 		$Weapon.rotation =  atan2(MP.y - global_position.y, MP.x - global_position.x)
@@ -30,8 +31,27 @@ func _physics_process(_delta: float) -> void:
 		var CX = Input.get_joy_axis(ConType-1, JOY_AXIS_RIGHT_X)
 		var CY = Input.get_joy_axis(ConType-1, JOY_AXIS_RIGHT_Y)
 		
-		if abs(CX) > 0.2 and abs(CY) > 0.2:
+		if abs(CX) > 0.2 and abs(CY) > 0.3:
+			$EyeHolder/Eyes.centered = false
 			$Weapon.rotation =  atan2(CY, CX)
+		#else:
+			#$EyeHolder/Eyes.centered = true
+	
+	
+	
+	$EyeHolder/Eyes.Update(rad_to_deg($Weapon.rotation) + 90)
+	
+	if $AnimatedSprite2D.frame % 2 != 0:
+		$EyeHolder.position.y = -2
+	else:
+		$EyeHolder.position.y = 0
+	
+	if PosBuff != global_position:
+		$AnimatedSprite2D.play(WhatConToUse)
+	else:
+		$AnimatedSprite2D.stop()
+		$AnimatedSprite2D.frame = 0
+	PosBuff = global_position
 	
 	if ConType != 5:
 		#Movement
@@ -43,7 +63,7 @@ func _physics_process(_delta: float) -> void:
 			position.x-=Speed
 		if Input.is_action_pressed("Move_right" + WhatConToUse):
 			position.x+=Speed
-	
+		
 	
 	#$Weapon/Sprite2D2.global_rotation = 0
 	
