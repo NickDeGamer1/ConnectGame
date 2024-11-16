@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfscqf7rtkh5u"]
+[gd_scene load_steps=6 format=3 uid="uid://dnrvvsgf6uax2"]
 
-[ext_resource type="Script" path="res://title_screen.gd" id="1_a8gkc"]
-[ext_resource type="Texture2D" path="res://GKp1uzfXgAMhTt3.png" id="1_fkmxw"]
-[ext_resource type="FontFile" path="res://Lemon Round.ttf" id="2_u5qyt"]
+[ext_resource type="Texture2D" uid="uid://glu68q5ya2h0" path="res://GKp1uzfXgAMhTt3.png" id="1_fkmxw"]
+[ext_resource type="FontFile" uid="uid://cucrr73032knb" path="res://Lemon Round.ttf" id="2_u5qyt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awybt"]
 texture = ExtResource("1_fkmxw")
@@ -37,7 +36,6 @@ offset_top = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a8gkc")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
