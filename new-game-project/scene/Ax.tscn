@@ -103,9 +103,9 @@ texture = ExtResource("1_gf2rr")
 region_enabled = true
 region_rect = Rect2(64, 98, 32, 32)
 
-[node name="Area2D" type="Area2D" parent="32x32PixelWeaponsFree"]
+[node name="Weapon" type="Area2D" parent="32x32PixelWeaponsFree"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Weapon"]
 position = Vector2(3, -8.75)
 shape = SubResource("RectangleShape2D_a6kr5")
 

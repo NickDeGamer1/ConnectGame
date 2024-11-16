@@ -47,7 +47,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("32x32PixelWeaponsFree/Area2D/CollisionShape2D:disabled")
+tracks/3/path = NodePath("32x32PixelWeaponsFree/Weapon/CollisionShape2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -99,7 +99,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("32x32PixelWeaponsFree/Area2D/CollisionShape2D:disabled")
+tracks/2/path = NodePath("32x32PixelWeaponsFree/Weapon/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -138,9 +138,9 @@ texture = ExtResource("1_bpxf2")
 region_enabled = true
 region_rect = Rect2(0, 354.4, 30.9, 30.8)
 
-[node name="Area2D" type="Area2D" parent="32x32PixelWeaponsFree"]
+[node name="Weapon" type="Area2D" parent="32x32PixelWeaponsFree"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Weapon"]
 position = Vector2(0.5, 0)
 rotation = -0.853466
 scale = Vector2(0.5, 0.5)

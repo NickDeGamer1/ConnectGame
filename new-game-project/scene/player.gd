@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var Speed = 7.5
+@export var Speed = 5
 @export var Health = 150
 @export var Alive:bool = true
 enum PNum {KBM, C1, C2, C3, C4, ONL}#Enums
@@ -88,7 +88,7 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite2D.frame = 0
 	PosBuff = global_position
 	
-	if ConType != 5:
+	if ConType != 5 and !$ShapeCast2D.is_colliding():
 		#Movement
 		if Input.is_action_pressed("Move_down" + WhatConToUse):
 			position.y+=Speed
@@ -190,5 +190,5 @@ func UpdateHealth():
 		Alive = false
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.name.contains("Enemy"):
-		Health -= body.damage
+	if body.name.contains("enemy"):
+		Health -= body.ATTACK_DAMAGE

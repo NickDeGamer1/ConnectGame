@@ -1,4 +1,4 @@
 extends Node
 
-var numPLayers = 2
+var numPLayers = 1
 var IncludeKBM:bool = true
