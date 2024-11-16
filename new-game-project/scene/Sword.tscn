@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://0gonfodxxchd"]
 
 [ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="1_bpxf2"]
-[ext_resource type="Script" path="res://Scenes/Weapon.gd" id="1_oq740"]
+[ext_resource type="Script" path="res://scene/Weapon.gd" id="1_oq740"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm668"]
 size = Vector2(64, 17)

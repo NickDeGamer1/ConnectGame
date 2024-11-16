@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://buok4u6oeo8ga"]
 
-[ext_resource type="Script" path="res://Scenes/Weapon.gd" id="1_ey2j5"]
+[ext_resource type="Script" path="res://scene/Weapon.gd" id="1_ey2j5"]
 [ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="1_ieg56"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqjs"]
