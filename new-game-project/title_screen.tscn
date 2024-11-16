@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://mfbrpuc02wok"]
+
+[ext_resource type="Script" path="res://title_screen.gd" id="1_5p3hr"]
+[ext_resource type="Texture2D" uid="uid://glu68q5ya2h0" path="res://GKp1uzfXgAMhTt3.png" id="1_fkmxw"]
+[ext_resource type="FontFile" uid="uid://cucrr73032knb" path="res://Lemon Round.ttf" id="2_u5qyt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awybt"]
+texture = ExtResource("1_fkmxw")
+modulate_color = Color(0.552956, 0.552956, 0.552956, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l5klr"]
+bg_color = Color(0.8, 0.773333, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.235294)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf7io"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_color = Color(0, 0, 0, 0.235294)
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p3hr")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_awybt")
+
+[node name="TitleScreenContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.0
+offset_top = -73.0
+offset_right = 193.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Play" type="Button" parent="TitleScreenContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_l5klr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bf7io")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf7io")
+text = "PLAY"
+metadata/_edit_use_anchors_ = true
+
+[node name="Settings" type="Button" parent="TitleScreenContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_l5klr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bf7io")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf7io")
+text = "OPTIONS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="Button" parent="TitleScreenContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/hover = SubResource("StyleBoxFlat_l5klr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bf7io")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bf7io")
+text = "CREDITS"
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -280.0
+offset_right = 76.0
+offset_bottom = -162.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(5.19812e-06, 0.832665, 0.868515, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_fonts/font = ExtResource("2_u5qyt")
+theme_override_font_sizes/font_size = 95
+text = "Protect  the oakley"
+
+[connection signal="pressed" from="TitleScreenContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TitleScreenContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="TitleScreenContainer/Credits" to="." method="_on_credits_pressed"]

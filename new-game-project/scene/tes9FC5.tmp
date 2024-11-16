@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfjefajdsmltd"]
+
+[ext_resource type="PackedScene" uid="uid://cne8v4uqsvxij" path="res://Scenes/Player.tscn" id="1_javgr"]
+[ext_resource type="Script" path="res://Scenes/CameraFallow.gd" id="2_nkq4l"]
+
+[node name="Test" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_javgr")]
+position = Vector2(532, 585)
+
+[node name="Player2" parent="." instance=ExtResource("1_javgr")]
+position = Vector2(1224, 598)
+ConType = 1
+
+[node name="Player3" parent="." instance=ExtResource("1_javgr")]
+position = Vector2(958, 756)
+ConType = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
+script = ExtResource("2_nkq4l")
