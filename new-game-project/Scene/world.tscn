@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=20 format=4 uid="uid://dmn3xe0k3qysw"]
 
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Script" path="res://scene/world.gd" id="1_u23qa"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
 [ext_resource type="PackedScene" uid="uid://bsmoolqa3behx" path="res://scene/tree.tscn" id="4_quntu"]
-[ext_resource type="PackedScene" path="res://scene/rock.tscn" id="5_xnw5d"]
+[ext_resource type="PackedScene" uid="uid://72g3kyo1fxfb" path="res://scene/rock.tscn" id="5_xnw5d"]
 [ext_resource type="Script" path="res://scene/day_and_night_cycle.gd" id="6_st5r6"]
 [ext_resource type="Texture2D" uid="uid://c3cac4tnf2tyo" path="res://Texture/Oakley.png" id="7_vgyrq"]
 [ext_resource type="PackedScene" uid="uid://w7iifgbfqnbe" path="res://scene/PlayersNode.tscn" id="8_7egnc"]
+[ext_resource type="Script" path="res://scene/oakley.gd" id="9_rxvgh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ax3r"]
 texture = ExtResource("1_qkq7t")
@@ -449,6 +450,11 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_axakc"]
 size = Vector2(128, 128)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_dav04"]
+vertices = PackedVector2Array(1829.39, -1153.37, 3091.7, 1609.59, -1364.88, 1784.67, -1799.02, -358.211, -690.578, -1301.78)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1810, -362, -1373, 1795, 3107, 1619, 1836, -1163, -694, -1312)])
+
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -1)
 script = ExtResource("1_u23qa")
@@ -524,11 +530,16 @@ libraries = {
 
 [node name="Oakley" type="StaticBody2D" parent="."]
 position = Vector2(333, 232)
+script = ExtResource("9_rxvgh")
 
 [node name="Oakley" type="Sprite2D" parent="Oakley"]
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("7_vgyrq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Oakley"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oakley" groups=["Oakley"]]
 shape = SubResource("RectangleShape2D_axakc")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Oakley/CollisionShape2D"]
+position = Vector2(-117, 11)
+navigation_polygon = SubResource("NavigationPolygon_dav04")

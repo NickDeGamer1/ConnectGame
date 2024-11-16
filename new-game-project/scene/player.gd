@@ -1,4 +1,5 @@
 extends Area2D
+class_name Player
 
 @export var Speed = 5
 @export var Health = 150
