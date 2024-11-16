@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://fvlfaql3eahb" path="res://BotSprites/PurpleBot/Untitled_Artwork-2.png" id="15_6r065"]
 [ext_resource type="Texture2D" uid="uid://den62wkg6ivdp" path="res://BotSprites/PurpleBot/Untitled_Artwork-3.png" id="16_apxmv"]
 [ext_resource type="Texture2D" uid="uid://sxgcj6wgof67" path="res://BotSprites/PurpleBot/Untitled_Artwork-4.png" id="17_00gqn"]
-[ext_resource type="Theme" uid="uid://cf05qslyrcgw" path="res://themes/ThemeGood.tres" id="24_k44tp"]
+[ext_resource type="Theme" path="res://themes/ThemeGood.tres" id="24_k44tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crysh"]
 size = Vector2(40, 60)
@@ -177,10 +177,6 @@ texture_filter = 1
 script = ExtResource("1_drpok")
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-shape = SubResource("RectangleShape2D_crysh")
-target_position = Vector2(74, 0)
-
-[node name="ShapeCast2D2" type="ShapeCast2D" parent="."]
 shape = SubResource("RectangleShape2D_crysh")
 target_position = Vector2(74, 0)
 
