@@ -11,10 +11,15 @@ size = Vector2(125, 125)
 
 [node name="Player" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(532, 585)
+Speed = 10
+Health = 150
+ConType = 0
 WepType = 0
 
 [node name="Player2" parent="." instance=ExtResource("1_javgr")]
 position = Vector2(532, 585)
+Speed = 10
+Health = 150
 ConType = 2
 WepType = 0
 

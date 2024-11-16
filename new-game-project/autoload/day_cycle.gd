@@ -13,10 +13,10 @@ enum TimeOfDay {
 }
 
 const duration = {
-	TimeOfDay.MORNING : 2.5,
-	TimeOfDay.AFTERNOON : 2.5,
-	TimeOfDay.NIGHT : 2.5,
-	TimeOfDay.DAWN : 1.5,
+	TimeOfDay.MORNING : 60, #number is second counter
+	TimeOfDay.AFTERNOON : 120,
+	TimeOfDay.NIGHT : 120,
+	TimeOfDay.DAWN : 30,
 }
 
 var current_period := TimeOfDay.MORNING

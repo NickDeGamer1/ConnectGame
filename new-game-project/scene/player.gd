@@ -8,7 +8,7 @@ enum PNum {KBM, C1, C2, C3, C4, ONL}#Enums
 enum WNum {Sword, Spear, Ax, Bow}
 @export var WepType: WNum
 var WhatConToUse:String = "PC"
-var WepPath:String = "res://Scenes/Sword.tscn"
+var WepPath:String = "res://Scene/Sword.tscn"
 var AnimPlay:bool = false
 @onready var PosBuff = global_position
 @onready var Cam = get_node("../Camera2D")
@@ -32,17 +32,20 @@ func _ready() -> void:
 	get_node("Lights/" + WhatConToUse).visible = true
 	match WepType:
 		0:
-			WepPath = "res://Scenes/Sword.tscn"
+			WepPath = "res://scene/Sword.tscn"
 		1:
-			WepPath = "res://Scenes/Spear.tscn"
+			WepPath = "res://scene/Spear.tscn"
 		2:
-			WepPath = "res://Scenes/Ax.tscn"
-		3:
-			WepPath = "res://Scenes/Bow.tscn"
-	var c1 = load(WepPath)
-	$Weapon/Area2D/WeaponPos.add_child(c1.instantiate())
+			WepPath = "res://scene/Ax.tscn"
+		_:
+			WepPath = "res://scene/Bow.tscn"
+	var Wep = load(WepPath)
+	$Weapon/Area2D/WeaponPos.add_child(Wep.instantiate())
 
 func _physics_process(_delta: float) -> void:
+	
+	UpdateHealth()
+	
 	if ConType == 0:#On KBM
 		var MP
 		if Cam != null:
@@ -54,13 +57,10 @@ func _physics_process(_delta: float) -> void:
 		var CX = Input.get_joy_axis(ConType-1, JOY_AXIS_RIGHT_X)
 		var CY = Input.get_joy_axis(ConType-1, JOY_AXIS_RIGHT_Y)
 		
+		#$ProgressBar.theme.
 		
-		
-		#if abs(CX) > 0.2 and abs(CY) > 0.3:
 		$EyeHolder/Eyes.centered = false
 		$Weapon.rotation =  atan2(CY, CX)
-		#else:
-			#$EyeHolder/Eyes.centered = true
 	
 	
 	$EyeHolder/Eyes.Update(rad_to_deg($Weapon.rotation) + 90)
@@ -77,7 +77,25 @@ func _physics_process(_delta: float) -> void:
 		$AnimatedSprite2D.frame = 0
 	PosBuff = global_position
 	
-	if ConType != 5:
+	if Input.is_action_pressed("Move_down" + WhatConToUse) and Input.is_action_pressed("Move_left" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(-15,15)
+	elif Input.is_action_pressed("Move_up" + WhatConToUse) and Input.is_action_pressed("Move_right" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(15,-15)
+	elif Input.is_action_pressed("Move_down" + WhatConToUse) and Input.is_action_pressed("Move_right" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(15,15)
+	elif Input.is_action_pressed("Move_up" + WhatConToUse) and Input.is_action_pressed("Move_left" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(-15,-15)
+	elif Input.is_action_pressed("Move_down" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(0,15)
+	elif Input.is_action_pressed("Move_up" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(0,-15)
+	elif Input.is_action_pressed("Move_left" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(-15,0)
+	elif Input.is_action_pressed("Move_right" + WhatConToUse):
+		$ShapeCast2D.target_position = Vector2(15,0)
+	
+	
+	if ConType != 5 and !$ShapeCast2D.is_colliding():
 		#Movement
 		if Input.is_action_pressed("Move_down" + WhatConToUse):
 			position.y+=Speed
@@ -111,6 +129,9 @@ func _physics_process(_delta: float) -> void:
 			$Weapon/Area2D/WeaponPos/Weapon.use()
 	
 	#$Weapon/Sprite2D2.global_rotation = 0
+
+func UpdateHealth():
+	$ProgressBar.value = Health
 	
 		
 		$EyeHolder/Eyes.Update(rad_to_deg($Weapon.rotation) + 90)

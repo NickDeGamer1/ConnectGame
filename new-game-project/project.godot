@@ -17,6 +17,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Options="*res://options.gd"
+PlayerShared="*res://autoload/player_shared.gd"
+DayCycle="res://autoload/day_cycle.gd"
 
 [display]
 

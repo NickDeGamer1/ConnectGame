@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bydsxhv5825i2"]
+
+[ext_resource type="StyleBox" uid="uid://tt61aabmbmxw" path="res://themes/HPBad.tres" id="1_f5eg3"]
+
+[resource]
+ProgressBar/colors/font_color = Color(0, 0, 0, 1)
+ProgressBar/colors/font_outline_color = Color(0, 0, 0, 1)
+ProgressBar/styles/background = ExtResource("1_f5eg3")
