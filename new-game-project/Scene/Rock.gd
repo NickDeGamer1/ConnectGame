@@ -1,6 +1,4 @@
-extends Area2D
-
-@export var health:int = 25
+extends Prop
 
 
 func _on_area_entered(area: Area2D) -> void:
@@ -14,6 +12,7 @@ func _input(event: InputEvent) -> void:
 		print(health)
 		
 
-func CheckHealth():
-	if health <= 0:
-		queue_free()
+
+func addResource():
+	ResourceStone += 1
+	print(ResourceStone)
