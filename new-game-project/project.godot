@@ -8,6 +8,14 @@
 
 config_version=5
 
+[autoload]
+
+DayCycle="*res://autoload/day_cycle.gd"
+
+[dotnet]
+
+project/assembly_name="New Game Project"
+
 [application]
 
 config/name="ConnectGame"
