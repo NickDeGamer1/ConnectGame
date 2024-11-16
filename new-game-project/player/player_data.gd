@@ -2,6 +2,7 @@ extends Node
 
 @export var health_max = 10
 @export var health = health_max
+var resources: Dictionary
 
 signal recovered_health(heal:float)
 signal took_damage(damage:float)
@@ -31,3 +32,15 @@ func _apply_damage( damage:float ):
 func _apply_healing( heal:float ):
 	health += heal
 	recovered_health.emit(heal)
+
+
+func add_resource(item:String, amount:=1):
+	item = item.strip_edges().to_snake_case()
+	if resources.has(item):
+		resources[item] += amount
+
+
+func spend_resource(item:String, amount:=1):
+	item = item.strip_edges().to_snake_case()
+	if resources.has(item):
+		resources[item] -= amount
