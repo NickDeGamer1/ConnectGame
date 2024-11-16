@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dnrvvsgf6uax2"]
+[gd_scene load_steps=7 format=3 uid="uid://mfbrpuc02wok"]
 
+[ext_resource type="Script" path="res://title_screen.gd" id="1_5p3hr"]
 [ext_resource type="Texture2D" uid="uid://glu68q5ya2h0" path="res://GKp1uzfXgAMhTt3.png" id="1_fkmxw"]
 [ext_resource type="FontFile" uid="uid://cucrr73032knb" path="res://Lemon Round.ttf" id="2_u5qyt"]
 
@@ -36,8 +37,9 @@ offset_top = -7.0
 offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5p3hr")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,7 +48,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_awybt")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TitleScreenContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -61,7 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Play" type="Button" parent="TitleScreenContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -75,7 +77,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bf7io")
 text = "PLAY"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Settings" type="Button" parent="TitleScreenContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -89,7 +91,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bf7io")
 text = "OPTIONS"
 metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Credits" type="Button" parent="TitleScreenContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
@@ -103,7 +105,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_bf7io")
 text = "CREDITS"
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="."]
+[node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -123,6 +125,6 @@ theme_override_fonts/font = ExtResource("2_u5qyt")
 theme_override_font_sizes/font_size = 95
 text = "Protect  the oakley"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="TitleScreenContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="TitleScreenContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="TitleScreenContainer/Credits" to="." method="_on_credits_pressed"]
