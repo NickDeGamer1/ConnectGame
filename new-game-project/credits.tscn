@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://m3ceph3opskp"]
+
+[ext_resource type="FontFile" uid="uid://i4jd5su3ncjb" path="res://autoload/Lemon Round.ttf" id="1_26a0u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j5lhw"]
+bg_color = Color(0.144063, 0.144063, 0.144062, 1)
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_j5lhw")
+
+[node name="CreditsText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_right = 62.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_26a0u")
+theme_override_font_sizes/font_size = 60
+text = "CREDITS
+"
+
+[node name="CreditsContent" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 58.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 16
+text = "Grass, Rock, and Tree tiles by: Cainos - https://itch.io/profile/cainos 
+Tiles for Walls and Fences by: Schwarnhild - https://itch.io/profile/schwarnhild 
+Weapons: https://admurin.itch.io/
+Title Font: https://letsfourlines.com
+"
+
+[node name="CreditsText2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -459.0
+offset_top = -63.0
+offset_right = 459.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.666667, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 8
+theme_override_fonts/font = ExtResource("1_26a0u")
+theme_override_font_sizes/font_size = 60
+text = "SPECIAL THANKS TO: WOLFJAW STUDIOS"
