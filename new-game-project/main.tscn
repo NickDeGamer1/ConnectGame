@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfikmreip25nh"]
+[gd_scene load_steps=3 format=3 uid="uid://cfikmreip25nh"]
 
 [ext_resource type="Script" path="res://autoload/test.gd" id="1_dylrm"]
+[ext_resource type="PackedScene" path="res://title_screen.tscn" id="2_8sruk"]
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_dylrm")
+
+[node name="TitleScreen" parent="." instance=ExtResource("2_8sruk")]
+layout_mode = 1
+script = null
