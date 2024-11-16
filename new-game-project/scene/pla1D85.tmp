@@ -125,6 +125,9 @@ size = Vector2(50, 100)
 [node name="Player" type="Area2D" groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_drpok")
+Speed = null
+Health = null
+ConType = null
 WepType = 3
 
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]

@@ -23,7 +23,6 @@
 [ext_resource type="Texture2D" uid="uid://fvlfaql3eahb" path="res://BotSprites/PurpleBot/Untitled_Artwork-2.png" id="15_6r065"]
 [ext_resource type="Texture2D" uid="uid://den62wkg6ivdp" path="res://BotSprites/PurpleBot/Untitled_Artwork-3.png" id="16_apxmv"]
 [ext_resource type="Texture2D" uid="uid://sxgcj6wgof67" path="res://BotSprites/PurpleBot/Untitled_Artwork-4.png" id="17_00gqn"]
-[ext_resource type="Theme" uid="uid://cf05qslyrcgw" path="res://themes/ThemeGood.tres" id="24_k44tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crysh"]
 size = Vector2(40, 60)
@@ -122,6 +121,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_52eig"]
 size = Vector2(50, 100)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pihut"]
+bg_color = Color(0, 1, 0, 1)
+
 [node name="Player" type="Area2D" groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_drpok")
@@ -173,8 +175,7 @@ offset_top = -50.0
 offset_right = 150.0
 offset_bottom = -23.0
 scale = Vector2(0.5, 0.5)
-theme = ExtResource("24_k44tp")
-max_value = 150.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_pihut")
 step = 1.0
-value = 150.0
-show_percentage = false
+value = 100.0
