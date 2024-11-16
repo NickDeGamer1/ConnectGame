@@ -22,6 +22,8 @@ const duration = {
 var current_period := TimeOfDay.MORNING
 var timer := Timer.new()
 
+signal period_changed(new_period:int)
+
 
 func _start( period := TimeOfDay.MORNING ):
 	current_period = period
@@ -32,9 +34,14 @@ func _start( period := TimeOfDay.MORNING ):
 	## Have the timer start on the current time period's duration
 	timer.start( duration[current_period] ) 
 	print("starting!")
+	_start_period()
 
 
 func _progress_period():
 	current_period = (current_period + 1) % TimeOfDay.size()
-	print(current_period)
-	pass
+	_start_period()
+
+
+func _start_period():
+	period_changed.emit(current_period)
+	print("change to ", current_period)
