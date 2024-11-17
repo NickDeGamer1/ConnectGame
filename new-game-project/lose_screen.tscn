@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dw6q13hjswr23"]
+[gd_scene load_steps=5 format=3 uid="uid://c4ftxxniwbv6s"]
 
 [ext_resource type="Script" path="res://lose_screen.gd" id="1_korgd"]
-[ext_resource type="Texture2D" path="res://Sad Oaks Image.jpg" id="1_wpm31"]
+[ext_resource type="Texture2D" uid="uid://c3daf24fkihi1" path="res://Sad Oaks Image.jpg" id="1_wpm31"]
 [ext_resource type="FontFile" uid="uid://cucrr73032knb" path="res://Lemon Round.ttf" id="2_tgsap"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwodw"]
