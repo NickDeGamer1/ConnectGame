@@ -20,7 +20,7 @@ func CheckHealth():
 		
 func restore():
 	$TileMapLayer.visible = true
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false)#.disabled = false
 	health = max_health
 
 func build_Wall():
