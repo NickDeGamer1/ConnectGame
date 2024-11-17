@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bofsbicr30hy6"]
+[gd_scene load_steps=5 format=3 uid="uid://bofsbicr30hy6"]
 
 [ext_resource type="Script" path="res://scene/wall_health.gd" id="1_kl2ti"]
 [ext_resource type="Texture2D" uid="uid://vhnempqv34us" path="res://summer_plains_v1.0_plus/wall_tiles.png" id="1_ko43h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob0r7"]
 size = Vector2(62.5, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sfcjq"]
+size = Vector2(73, 42)
 
 [node name="Wall with Health" type="StaticBody2D" groups=["Wall"]]
 collision_layer = 7
@@ -24,8 +27,11 @@ region_enabled = true
 region_rect = Rect2(192.516, 0, 63.4844, 27.5363)
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.25, 1)
-shape = SubResource("RectangleShape2D_ob0r7")
-disabled = true
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_sfcjq")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
