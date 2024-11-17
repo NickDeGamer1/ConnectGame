@@ -35,6 +35,7 @@ project/assembly_name="Konect4Game"
 Players="The Players"
 Oakley=""
 Wall=""
+Enemy=""
 
 [input]
 
