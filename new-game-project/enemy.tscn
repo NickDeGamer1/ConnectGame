@@ -167,7 +167,7 @@ height = 33.2667
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fr2sm"]
 
-[node name="enemy" type="CharacterBody2D"]
+[node name="enemy" type="CharacterBody2D" groups=["Enemy"]]
 position = Vector2(1, 0)
 scale = Vector2(30, 30)
 collision_layer = 2
