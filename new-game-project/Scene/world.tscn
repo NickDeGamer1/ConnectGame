@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=4 uid="uid://dmn3xe0k3qysw"]
+[gd_scene load_steps=23 format=4 uid="uid://dmn3xe0k3qysw"]
 
+[ext_resource type="Script" path="res://scene/world.gd" id="1_cgc28"]
 [ext_resource type="Texture2D" uid="uid://dhit1sfgc011p" path="res://Texture/TX Props.png" id="1_qkq7t"]
 [ext_resource type="Texture2D" uid="uid://b3cn8k3ttivmw" path="res://Texture/TX Plant.png" id="2_tqpfe"]
 [ext_resource type="TileSet" uid="uid://dtna1472lbwdu" path="res://new_tile_set.tres" id="3_61kkn"]
@@ -395,6 +396,11 @@ tile_size = Vector2i(32, 32)
 sources/2 = SubResource("TileSetAtlasSource_6ax3r")
 sources/4 = SubResource("TileSetAtlasSource_jjb10")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_8jxee"]
+vertices = PackedVector2Array(2437.46, 1630.08, 5.64844, 1610.12, 5.65625, 1610.12, -1281.26, 149.938, -1269.83, -540.32, -1071.35, -1425.21, 2425.46, -845.773, -706.828, 1590.18, -1424.64, 690.75)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(3, 4, 5, 6, 0, 2, 7), PackedInt32Array(3, 7, 8)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-1079.05, -1436.64, 2435.42, -854.256, 2447.51, 1640.17, 5.37177, 1620.12, -711.758, 1600.06, -1435.6, 693.062, -1291.24, 148.566, -1279.82, -541.524)])
+
 [sub_resource type="Animation" id="Animation_51y44"]
 resource_name = "Day to Night"
 length = 3.0
@@ -454,6 +460,7 @@ size = Vector2(82, 128)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -1)
+script = ExtResource("1_cgc28")
 
 [node name="TileMap" type="Node2D" parent="."]
 position = Vector2(394, 306)
@@ -468,6 +475,9 @@ tile_set = ExtResource("3_61kkn")
 position = Vector2(33, -38)
 tile_map_data = PackedByteArray("AAD4/wAABAAAAAAAAAD4/wEAAgAEAA8AAAD4/wQABAAAAAQAAAD5/wQABAABAAQAAAD6/wIABAAAAAQAAAD6/wQAAgAEAA8AAAD7/wQABAADAAQAAAD8/wMABAAEAAMAAAD8/wQABAAEAAQAAAAJAPv/BAAAAAAAAAAMAP//BAADAAQAAAANAPv/BAAEAAAAAAANAPz/BAAEAAEAAAANAP7/BAAEAAMAAAANAP//BAAEAAQAAAAXAAgABAAAAAQAAAAYAAgABAABAAQAAAAaAAgABAADAAQAAAAbAAgABAAEAAQAAAAdAA8ABAAAAAAAAAAdABMABAAAAAQAAAAeABMABAABAAQAAAAgABMABAADAAQAAAAhABMABAAEAAQAAAABABQABAAFAAQAAAADABQABAAHAAQAAAD5/w8ABAAFAAQAAAD7/w8ABAAHAAQAAAANABMABAAFAAQAAAAPABMABAAHAAQAAAAVAPv/BAAJAAAAAAAVAP//AgAFAA8AAAAWAPv/BAAKAAAAAAATAPv/BAAKAAAAAAAUAPv/BAALAAAAAAAXAPn/BAAJAAAAAAAXAP3/BAAJAAQAAAAZAPn/BAALAAAAAAAZAP3/BAALAAQAAAAcAP3/BAAJAAAAAAAaAPn/BAAJAAAAAAAbAPn/BAAKAAAAAAAcAPn/BAALAAAAAAAYAAEABAAJAAQAAAAcAAEABAAJAAQAAAAeAP3/BAALAAAAAAAeAAEABAALAAQAAAAbABIAAgAFAA8AAAAWAA8AAgAFAA8AAAAhAAQAAgAFAA8AAAASAPv/AgAFAA8AAAD///v/AgAFAA8AAAAEAAEAAgAFAA8AAAD7/wgAAgAFAA8AAAD4/woAAgAFAA8AAAADAPn/BAAJAAAAAAAEAPn/BAAKAAAAAAAFAPn/BAALAAAAAAD6//7/BAAAAAAAAAD+//7/BAAEAAAAAAD+/wIABAAEAAQAAAD9/wMAAgAEAA8AAAAEAAcAAgALAAkAAAAEAAgAAgALAAoAAAAEAAkAAgALAAgAAAAFAAcAAgAMAAkAAAAFAAgAAgAMAAoAAAAFAAkAAgAMAAgAAAAGAAcAAgANAAkAAAAGAAgAAgANAAoAAAAGAAkAAgANAAgAAAAEAAoAAgALAAkAAAAEAAsAAgALAAoAAAAFAAoAAgAMAAkAAAAFAAsAAgAMAAoAAAAGAAoAAgANAAkAAAAGAAsAAgANAAoAAAAHAAkAAgALAAgAAAAHAAoAAgALAAkAAAAHAAsAAgALAAoAAAAIAAkAAgAMAAgAAAAIAAoAAgAMAAkAAAAIAAsAAgAMAAoAAAAJAAkAAgANAAgAAAAJAAoAAgANAAkAAAAJAAsAAgANAAoAAAAHAAYAAgALAAgAAAAHAAcAAgALAAkAAAAHAAgAAgALAAoAAAAIAAYAAgAMAAgAAAAIAAcAAgAMAAkAAAAIAAgAAgAMAAoAAAAJAAYAAgANAAgAAAAJAAcAAgANAAkAAAAJAAgAAgANAAoAAAAEAAYAAgALAAgAAAAFAAYAAgAMAAgAAAAGAAYAAgANAAgAAAD7/wIABAABAAQAAAA=")
 tile_set = SubResource("TileSet_yeyko")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="TileMap"]
+navigation_polygon = SubResource("NavigationPolygon_8jxee")
 
 [node name="Tree" parent="." instance=ExtResource("4_quntu")]
 position = Vector2(158, 219)
@@ -555,7 +565,7 @@ libraries = {
 "": SubResource("AnimationLibrary_ih3mo")
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["Oakley"]]
 position = Vector2(779, 585)
 script = ExtResource("8_ndm67")
 
@@ -634,3 +644,15 @@ scale = Vector2(4, 4)
 [node name="Wall with Health16" parent="." instance=ExtResource("10_blraw")]
 position = Vector2(657, 823)
 scale = Vector2(4, 4)
+
+[node name="SpawnW" type="Node2D" parent="."]
+position = Vector2(815, 1110)
+
+[node name="SpawnN" type="Node2D" parent="."]
+position = Vector2(1594, 265)
+
+[node name="SpawnE" type="Node2D" parent="."]
+position = Vector2(1601, 402)
+
+[node name="SpawnS" type="Node2D" parent="."]
+position = Vector2(1427, 906)

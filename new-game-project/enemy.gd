@@ -1,13 +1,13 @@
 extends CharacterBody2D
 
 # Constants
-const SPEED = 20
+const SPEED = 90
 const ATTACK_RANGE = 32
 const ATTACK_COOLDOWN = 1.0
 const ATTACK_DAMAGE = 25
 
 # References
-@export var oakley: Node2D
+@onready var oakley:= get_node("../../StaticBody2D")
 @export var player: Node2D
 @onready var nav_agent := $NavigationAgent2D
 @onready var animated_sprite := $AnimatedSprite2D
