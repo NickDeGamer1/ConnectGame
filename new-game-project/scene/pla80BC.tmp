@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://cne8v4uqsvxij"]
 
-[ext_resource type="Script" path="res://scene/player.gd" id="1_3ujc8"]
+[ext_resource type="Script" path="res://scene/playerX.gd" id="1_m2d07"]
 [ext_resource type="Texture2D" uid="uid://xj3riufbpbl8" path="res://BotSprites/BlueBot/Untitled_Artwork-1.png" id="2_7gsfj"]
 [ext_resource type="Texture2D" uid="uid://cypqttv8ad4ki" path="res://BotSprites/RedBot/Untitled_Artwork-1.png" id="2_d2tcp"]
 [ext_resource type="Texture2D" uid="uid://dyq8ddmjxbxwr" path="res://BotSprites/BlueBot/Untitled_Artwork-2.png" id="3_8in23"]
@@ -171,7 +171,7 @@ metadata/_snap_enabled = true
 
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 texture_filter = 1
-script = ExtResource("1_3ujc8")
+script = ExtResource("1_m2d07")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
