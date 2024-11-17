@@ -17,6 +17,9 @@ const ATTACK_DAMAGE = 25
 var attack_timer = 0.0
 var attacking = false
 
+const damage_cooldown_reset := 0.25
+var damage_cooldown = 0.0
+
 # Health and speed
 var health = 100  # Default health value
 var speed = SPEED  # Speed of the enemy
@@ -31,6 +34,9 @@ func _process(delta: float) -> void:
 	if oakley == null:
 		_reassign_oakley()
 	pass
+	
+	if damage_cooldown > 0:
+		damage_cooldown -= delta
 
 
 func _reassign_player():
@@ -97,6 +103,9 @@ func _on_body_entered(body: Node2D):
 	# Check if the body is a player, oakley, or a wall
 	if body.name.to_lower().contains("player") or body.name.to_lower().contains("oakley") or body.name.to_lower().contains("wall"):
 		apply_damage_to_body(body)
+	if body.is_in_group("Weapon") and damage_cooldown <= 0.0:
+		damage_cooldown = damage_cooldown_reset
+		health -= body.damage_amount
 
 func apply_damage_to_body(body: Node2D):
 	# Apply damage to the body

@@ -33,8 +33,10 @@ project/assembly_name="Konect4Game"
 [global_group]
 
 Players="The Players"
-Oakley=""
 Wall=""
+Oakley=""
+Enemy=""
+Weapon="swingy ouch"
 
 [input]
 

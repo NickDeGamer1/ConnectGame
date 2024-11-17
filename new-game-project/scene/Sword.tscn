@@ -138,11 +138,11 @@ texture = ExtResource("1_bpxf2")
 region_enabled = true
 region_rect = Rect2(0, 354.4, 30.9, 30.8)
 
-[node name="Weapon" type="Area2D" parent="32x32PixelWeaponsFree"]
+[node name="Weapon" type="Area2D" parent="32x32PixelWeaponsFree" groups=["Weapon"]]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Weapon"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Weapon" groups=["Weapon"]]
 position = Vector2(0.5, 0)
 rotation = -0.853466
 scale = Vector2(0.5, 0.5)
