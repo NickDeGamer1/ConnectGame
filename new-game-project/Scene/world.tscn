@@ -491,6 +491,7 @@ position = Vector2(1203, 267)
 position = Vector2(217, 637)
 
 [node name="Tree8" parent="." instance=ExtResource("4_quntu")]
+visible = false
 position = Vector2(1228, 461)
 
 [node name="Tree9" parent="." instance=ExtResource("4_quntu")]
