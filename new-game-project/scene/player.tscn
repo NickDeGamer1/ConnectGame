@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://cne8v4uqsvxij"]
+[gd_scene load_steps=37 format=3 uid="uid://cne8v4uqsvxij"]
 
 [ext_resource type="Script" path="res://scene/player.gd" id="1_3ujc8"]
 [ext_resource type="Texture2D" uid="uid://xj3riufbpbl8" path="res://BotSprites/BlueBot/Untitled_Artwork-1.png" id="2_7gsfj"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://fvlfaql3eahb" path="res://BotSprites/PurpleBot/Untitled_Artwork-2.png" id="15_6r065"]
 [ext_resource type="Texture2D" uid="uid://den62wkg6ivdp" path="res://BotSprites/PurpleBot/Untitled_Artwork-3.png" id="16_apxmv"]
 [ext_resource type="Texture2D" uid="uid://sxgcj6wgof67" path="res://BotSprites/PurpleBot/Untitled_Artwork-4.png" id="17_00gqn"]
-[ext_resource type="Script" path="res://Scene/eyes.gd" id="22_xru55"]
+[ext_resource type="Script" path="res://scene/eyes.gd" id="22_xru55"]
 [ext_resource type="Theme" uid="uid://cf05qslyrcgw" path="res://themes/ThemeGood.tres" id="24_k44tp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amr48"]
@@ -116,9 +116,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_52eig"]
-size = Vector2(50, 100)
-
 [sub_resource type="Gradient" id="Gradient_o3x4y"]
 colors = PackedColorArray(0, 1, 1, 1, 0, 0, 0, 1)
 
@@ -172,6 +169,7 @@ metadata/_snap_enabled = true
 [node name="Player" type="CharacterBody2D" groups=["Players"]]
 texture_filter = 1
 script = ExtResource("1_3ujc8")
+WepType = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -184,14 +182,8 @@ animation = &"C0"
 
 [node name="Weapon" type="Node2D" parent="."]
 
-[node name="ResourceTool" type="Area2D" parent="Weapon"]
+[node name="ResourceTool" type="Node2D" parent="Weapon"]
 position = Vector2(100, 0)
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Weapon/ResourceTool"]
-position = Vector2(-47, 0)
-shape = SubResource("RectangleShape2D_52eig")
 
 [node name="WeaponPos" type="Node2D" parent="Weapon/ResourceTool"]
 position = Vector2(-57, 0)

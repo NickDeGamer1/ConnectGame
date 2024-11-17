@@ -18,7 +18,8 @@ var Alive:bool = true
 func _ready() -> void:
 	
 	UpdateCon(ConType)
-	UpdateWep(WepType)
+	var Rand = RandomNumberGenerator.new()
+	UpdateWep(Rand.randi_range(0,3))
 
 func UpdateCon(CT):
 	ConType = CT

@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 @export var max_health:int = 50
 @export var health := 50
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://buok4u6oeo8ga"]
 
-[ext_resource type="Script" path="res://scene/Weapon.gd" id="1_e50o0"]
-[ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="2_d34b0"]
+[ext_resource type="Script" path="res://scene/Weapon.gd" id="1_ef77f"]
+[ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="2_ji5ji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yqjs"]
 size = Vector2(9, 38)
@@ -93,14 +93,14 @@ _data = {
 
 [node name="Weapon" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_e50o0")
+script = ExtResource("1_ef77f")
 Damage = 5
 
 [node name="32x32PixelWeaponsFree" type="Sprite2D" parent="."]
 position = Vector2(17, -2)
 rotation = 0.785398
 scale = Vector2(2, 2)
-texture = ExtResource("2_d34b0")
+texture = ExtResource("2_ji5ji")
 region_enabled = true
 region_rect = Rect2(32, 129.656, 32, 28.327)
 

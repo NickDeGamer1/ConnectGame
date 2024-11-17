@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://mtie1olqhhob"]
 
-[ext_resource type="Script" path="res://scene/Weapon.gd" id="1_7ltxj"]
-[ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="1_gf2rr"]
+[ext_resource type="Script" path="res://scene/Weapon.gd" id="1_874yr"]
+[ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="2_tu6b1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6kr5"]
 size = Vector2(24, 24.5)
@@ -93,19 +93,19 @@ _data = {
 
 [node name="Weapon" type="Node2D"]
 texture_filter = 1
-script = ExtResource("1_7ltxj")
+script = ExtResource("1_874yr")
 Damage = 20
 
 [node name="32x32PixelWeaponsFree" type="Sprite2D" parent="."]
 position = Vector2(2, -25)
 scale = Vector2(2, 2)
-texture = ExtResource("1_gf2rr")
+texture = ExtResource("2_tu6b1")
 region_enabled = true
 region_rect = Rect2(64, 98, 32, 32)
 
 [node name="Weapon" type="Area2D" parent="32x32PixelWeaponsFree"]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Weapon"]
 position = Vector2(3, -8.75)
