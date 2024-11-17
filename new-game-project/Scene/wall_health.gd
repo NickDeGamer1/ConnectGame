@@ -1,10 +1,10 @@
-extends Area2D
+extends StaticBody2D
 @export var max_health:int = 50
 @export var health := 50
 
 
 func _on_area_entered(area: Area2D) -> void:
-	if area.name.contains("enemy"):
+	if area.is_in_group("Enemy"):
 		health -= 20  #area.dmg
 		CheckHealth()
 
@@ -19,9 +19,14 @@ func CheckHealth():
 		queue_free()
 		
 func restore():
-	visible = true
+	$TileMapLayer.visible = true
+	$CollisionShape2D.disabled = false
 	health = max_health
 
 func build_Wall():
-	if PlayerShared.ResourceWood == 3 or PlayerShared.ResourceStone == 3:
+	if PlayerShared.ResourceWood >= 3 or PlayerShared.ResourceStone >= 3:
 		restore()
+		if PlayerShared.ResourceWood >= 3:
+			PlayerShared.ResourceWood -= 3
+		else:
+			PlayerShared.ResourceStone -= 3

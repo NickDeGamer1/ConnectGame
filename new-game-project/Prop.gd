@@ -8,6 +8,7 @@ func CheckHealth():
 	if health <= 0:
 		visible = false
 		addResource()
+		get_node("CollisionShape2D").disabled = true
 		get_node("../Wallmanager").UpdateWall()
 
 func _ready() -> void:
@@ -29,5 +30,8 @@ func _on_period_changed(period):
 
 
 func restore():
-	visible = true
-	health = max_health
+	if !visible:
+		print("restore")
+		visible = true
+		health = max_health
+		get_node("CollisionShape2D").disabled = false

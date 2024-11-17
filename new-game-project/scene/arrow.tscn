@@ -1,26 +1,27 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvlg7xug4ig4k"]
 
-[ext_resource type="Script" path="res://scene/arrow.gd" id="1_h5jtg"]
-[ext_resource type="Texture2D" uid="uid://b3o4w3nh6xaxu" path="res://BotSprites/Arrow.png" id="2_5bv7c"]
+[ext_resource type="Script" path="res://scene/arrow.gd" id="1_cfm3r"]
+[ext_resource type="Texture2D" uid="uid://b3o4w3nh6xaxu" path="res://BotSprites/Arrow.png" id="2_lwqkv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqfxe"]
 size = Vector2(36, 16)
 
-[node name="Arrow" type="Area2D" groups=["Weapon"]]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("1_h5jtg")
+[node name="Weapon" type="Area2D"]
+collision_layer = 7
+collision_mask = 7
+script = ExtResource("1_cfm3r")
 
 [node name="Arrow" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("2_5bv7c")
+texture = ExtResource("2_lwqkv")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Weapon"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pqfxe")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(4.76837e-07, 4.17233e-07)
 scale = Vector2(1.8, 0.8)
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

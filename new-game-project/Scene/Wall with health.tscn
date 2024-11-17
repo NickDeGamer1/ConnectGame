@@ -1,21 +1,29 @@
 [gd_scene load_steps=4 format=3 uid="uid://bofsbicr30hy6"]
 
-[ext_resource type="Script" path="res://Scene/wall_health.gd" id="1_kl2ti"]
+[ext_resource type="Script" path="res://scene/wall_health.gd" id="1_kl2ti"]
 [ext_resource type="Texture2D" uid="uid://vhnempqv34us" path="res://summer_plains_v1.0_plus/wall_tiles.png" id="1_ko43h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ob0r7"]
 size = Vector2(62.5, 30)
 
-[node name="Wall with Health" type="Area2D" groups=["Wall"]]
+[node name="Wall with Health" type="StaticBody2D" groups=["Wall"]]
 script = ExtResource("1_kl2ti")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 1)
 shape = SubResource("RectangleShape2D_ob0r7")
+disabled = true
 
 [node name="TileMapLayer" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
 texture = ExtResource("1_ko43h")
 region_enabled = true
 region_rect = Rect2(192.516, 0, 63.4844, 27.5363)
 
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.25, 1)
+shape = SubResource("RectangleShape2D_ob0r7")
+disabled = true

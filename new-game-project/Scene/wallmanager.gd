@@ -6,5 +6,5 @@ var i = 0
 func UpdateWall():
 	Walls[i].build_Wall()
 	i+=1
-	if i> Walls.size():
+	if i >= Walls.size():
 		i=0

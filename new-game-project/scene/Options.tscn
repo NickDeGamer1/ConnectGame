@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://2hhde3ih5bcv"]
+
+[ext_resource type="Script" path="res://scene/options.gd" id="1_yb6sa"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yb6sa")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="CheckBox" type="CheckBox" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Include Keyboard"
+
+[node name="VSeparator" type="VSeparator" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+text = "Amount of players
+"
+
+[node name="SpinBox" type="SpinBox" parent="CenterContainer/HBoxContainer"]
+layout_mode = 2
+max_value = 5.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -63.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[connection signal="toggled" from="CenterContainer/HBoxContainer/CheckBox" to="." method="_on_check_box_toggled"]
+[connection signal="value_changed" from="CenterContainer/HBoxContainer/SpinBox" to="." method="_on_spin_box_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
