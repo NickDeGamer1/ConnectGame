@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw6q13hjswr23"]
+
+[ext_resource type="Script" path="res://lose_screen.gd" id="1_korgd"]
+[ext_resource type="Texture2D" path="res://Sad Oaks Image.jpg" id="1_wpm31"]
+[ext_resource type="FontFile" uid="uid://cucrr73032knb" path="res://Lemon Round.ttf" id="2_tgsap"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwodw"]
+texture = ExtResource("1_wpm31")
+
+[node name="Lose screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_korgd")
+
+[node name="Sad Oaks" type="Panel" parent="."]
+offset_right = 1920.0
+offset_bottom = 1231.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wwodw")
+
+[node name="TITLE" type="Button" parent="."]
+offset_left = 704.0
+offset_top = 648.0
+offset_right = 1211.0
+offset_bottom = 752.0
+theme_override_fonts/font = ExtResource("2_tgsap")
+theme_override_font_sizes/font_size = 50
+text = "Return to Title Screen"
+
+[node name="He died" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.01
+anchor_bottom = 0.021
+offset_left = 458.0
+offset_top = 91.0
+offset_right = 1486.8
+offset_bottom = 376.32
+theme_override_fonts/font = ExtResource("2_tgsap")
+theme_override_font_sizes/font_size = 200
+text = "Oakley Died!!!!"
+
+[connection signal="pressed" from="TITLE" to="." method="_on_title_pressed"]
