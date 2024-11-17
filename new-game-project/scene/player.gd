@@ -19,7 +19,7 @@ func _ready() -> void:
 	
 	UpdateCon(ConType)
 	var Rand = RandomNumberGenerator.new()
-	UpdateWep(3)#Rand.randi_range(0,3))
+	UpdateWep(Rand.randi_range(0,3))
 
 func UpdateCon(CT):
 	ConType = CT
