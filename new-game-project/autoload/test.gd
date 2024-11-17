@@ -15,7 +15,7 @@ var mode:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	DayCycle._start(DayCycle.TimeOfDay.MORNING)
+	DayCycle._start(DayCycle.TimeOfDay.DAY)
 	pass # Replace with function body.
 
 
