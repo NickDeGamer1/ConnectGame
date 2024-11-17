@@ -19,9 +19,14 @@ func CheckHealth():
 		queue_free()
 		
 func restore():
-	visible = true
+	$TileMapLayer.visible = true
+	$CollisionShape2D.disabled = false
 	health = max_health
 
 func build_Wall():
-	if PlayerShared.ResourceWood == 3 or PlayerShared.ResourceStone == 3:
+	if PlayerShared.ResourceWood >= 3 or PlayerShared.ResourceStone >= 3:
 		restore()
+		if PlayerShared.ResourceWood >= 3:
+			PlayerShared.ResourceWood -= 3
+		else:
+			PlayerShared.ResourceStone -= 3

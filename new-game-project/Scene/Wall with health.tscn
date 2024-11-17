@@ -12,8 +12,11 @@ script = ExtResource("1_kl2ti")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.25, 1)
 shape = SubResource("RectangleShape2D_ob0r7")
+disabled = true
 
 [node name="TileMapLayer" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
 texture = ExtResource("1_ko43h")
 region_enabled = true
 region_rect = Rect2(192.516, 0, 63.4844, 27.5363)
