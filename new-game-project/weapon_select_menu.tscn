@@ -1,0 +1,72 @@
+[gd_scene load_steps=3 format=3 uid="uid://dty6dsisnhokd"]
+
+[ext_resource type="Script" path="res://weapon_select_menu.gd" id="1_w1od7"]
+[ext_resource type="Texture2D" uid="uid://ssuclvgkdkhg" path="res://arrow_temp.png" id="2_xqwox"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w1od7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(936, 151)
+scale = Vector2(8, 8)
+texture = ExtResource("2_xqwox")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1246, 450)
+rotation = 1.5708
+scale = Vector2(-8, 8)
+texture = ExtResource("2_xqwox")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(579, 463)
+rotation = -1.5708
+scale = Vector2(8, 8)
+texture = ExtResource("2_xqwox")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(927, 786)
+rotation = 3.14159
+scale = Vector2(8, 8)
+texture = ExtResource("2_xqwox")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1084.0
+offset_top = 43.0
+offset_right = 1791.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'up' to wield the mighty sword!"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1082.0
+offset_top = 241.0
+offset_right = 1789.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'right' to brandish the mighty axe!"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 598.0
+offset_right = 756.0
+offset_bottom = 653.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'left' to launch the mighty spear!"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 843.0
+offset_right = 787.0
+offset_bottom = 898.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'down' to pluck the mighty bow!"
