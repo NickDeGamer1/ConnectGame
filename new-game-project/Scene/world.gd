@@ -8,7 +8,7 @@ extends Node2D
 # Variables
 var night_counter = 0
 var enemies_spawned = []
-var base_health = 100
+var base_health = 50
 var base_speed = 90
 var base_spawn_count = 3
 
@@ -50,16 +50,16 @@ func _spawn_enemies():
 		match edge:
 			0: 
 				# Top edge
-				enemy_instance.global_position = $SpawnN.global_position#tilelayer1.map_to_local(Vector2(randi_range(left_edge, right_edge), top_edge))
+				enemy_instance.global_position = tilelayer1.map_to_local(Vector2(randi_range(left_edge, right_edge), top_edge))
 			1: 
 				# Right edge
-				enemy_instance.global_position = $SpawnE.global_position#tilelayer1.map_to_local(Vector2(right_edge, randi_range(top_edge, bottom_edge)))
+				enemy_instance.global_position = tilelayer1.map_to_local(Vector2(right_edge, randi_range(top_edge, bottom_edge)))
 			2: 
 				# Bottom edge
-				enemy_instance.global_position = $SpawnS.global_position#tilelayer1.map_to_local(Vector2(randi_range(left_edge, right_edge), bottom_edge))
+				enemy_instance.global_position = tilelayer1.map_to_local(Vector2(randi_range(left_edge, right_edge), bottom_edge))
 			3: 
 				# Left edge
-				enemy_instance.global_position = $SpawnW.global_position#tilelayer1.map_to_local(Vector2(left_edge, randi_range(top_edge, bottom_edge)))
+				enemy_instance.global_position = tilelayer1.map_to_local(Vector2(left_edge, randi_range(top_edge, bottom_edge)))
 
 		# Set the scaled health and speed
 		enemy_instance.health = scaled_health
@@ -75,7 +75,7 @@ func _spawn_enemies():
 func _clear_enemies():
 	# Remove all spawned enemies from the scene
 	for enemy in enemies_spawned:
-		if enemy:
+		if enemy != null:
 			enemy.queue_free()
 	enemies_spawned.clear()
 # r

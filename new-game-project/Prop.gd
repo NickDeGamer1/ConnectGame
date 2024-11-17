@@ -8,7 +8,7 @@ func CheckHealth():
 	if health <= 0:
 		visible = false
 		addResource()
-		get_node("CollisionShape2D").disabled = true
+		get_node("CollisionShape2D").set_deferred("disabled", true)
 		get_node("../Wallmanager").UpdateWall()
 
 func _ready() -> void:

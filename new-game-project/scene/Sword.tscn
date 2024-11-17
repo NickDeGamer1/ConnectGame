@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://0gonfodxxchd"]
+[gd_scene load_steps=8 format=3 uid="uid://0gonfodxxchd"]
 
 [ext_resource type="Script" path="res://scene/Weapon.gd" id="1_1kqxp"]
 [ext_resource type="Texture2D" uid="uid://bx6qq3udpxxf5" path="res://BotSprites/32x32_PixelWeapons_Free.png" id="2_oenau"]
+[ext_resource type="Script" path="res://scene/ouchy.gd" id="3_rpnax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sm668"]
 size = Vector2(64, 17)
@@ -127,7 +128,7 @@ _data = {
 "Swing": SubResource("Animation_xl45f")
 }
 
-[node name="Weapon" type="Node2D"]
+[node name="Weapon" type="Node2D" groups=["Weapon"]]
 visible = false
 script = ExtResource("1_1kqxp")
 
@@ -139,8 +140,10 @@ region_enabled = true
 region_rect = Rect2(0, 354.4, 30.9, 30.8)
 
 [node name="Weapon" type="Area2D" parent="32x32PixelWeaponsFree" groups=["Weapon"]]
-collision_layer = 4
-collision_mask = 4
+collision_layer = 6
+collision_mask = 6
+script = ExtResource("3_rpnax")
+damage_amount = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="32x32PixelWeaponsFree/Weapon" groups=["Weapon"]]
 position = Vector2(0.5, 0)

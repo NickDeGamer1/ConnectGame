@@ -37,6 +37,10 @@ func _process(delta: float) -> void:
 	
 	if damage_cooldown > 0:
 		damage_cooldown -= delta
+	
+	if health <= 0:
+		queue_free()
+	#print(health, " hai!!!")
 
 
 func _reassign_player():
@@ -99,15 +103,32 @@ func update_animation(dir: Vector2):
 	else:
 		animated_sprite.play("orc_idle")
 
+
 func _on_body_entered(body: Node2D):
+	print("inside !", body.get_groups(), " ~ ", damage_cooldown)
+	
 	# Check if the body is a player, oakley, or a wall
 	if body.name.to_lower().contains("player") or body.name.to_lower().contains("oakley") or body.name.to_lower().contains("wall"):
 		apply_damage_to_body(body)
 	if body.is_in_group("Weapon") and damage_cooldown <= 0.0:
+		print("pebness")
 		damage_cooldown = damage_cooldown_reset
 		health -= body.damage_amount
+
 
 func apply_damage_to_body(body: Node2D):
 	# Apply damage to the body
 	if body.has_method("apply_damage"):
 		body.apply_damage(ATTACK_DAMAGE)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	print("inside !", area.get_groups(), " ~ ", damage_cooldown)
+	
+	# Check if the body is a player, oakley, or a wall
+	if area.name.to_lower().contains("player") or area.name.to_lower().contains("oakley") or area.name.to_lower().contains("wall"):
+		apply_damage_to_body(area)
+	if area.is_in_group("Weapon") and damage_cooldown <= 0.0:
+		$AnimationPlayer.play("TakeDamage")
+		damage_cooldown = damage_cooldown_reset
+		health -= area.get("damage_amount")
