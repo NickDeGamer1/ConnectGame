@@ -95,8 +95,8 @@ _data = {
 [node name="Weapon" type="Node2D" groups=["Weapon"]]
 texture_filter = 1
 script = ExtResource("1_874yr")
-Damage = 35
-damage_amount = 35
+Damage = 45
+damage_amount = 3545
 
 [node name="32x32PixelWeaponsFree" type="Sprite2D" parent="."]
 position = Vector2(2, -25)

@@ -10,3 +10,4 @@ func use():
 		$"../../../../..".add_child(Ar)
 		Ar.global_rotation = global_rotation
 		Ar.global_position = global_position
+		Ar.add_to_group("Weapon")

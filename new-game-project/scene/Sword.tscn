@@ -131,6 +131,8 @@ _data = {
 [node name="Weapon" type="Node2D" groups=["Weapon"]]
 visible = false
 script = ExtResource("1_1kqxp")
+Damage = 20
+damage_amount = 20
 
 [node name="32x32PixelWeaponsFree" type="Sprite2D" parent="."]
 texture_filter = 1
