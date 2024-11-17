@@ -16,8 +16,9 @@ func _input(event: InputEvent) -> void:
 
 func CheckHealth():
 	if health <= 0:
-		queue_free()
-		
+		$TileMapLayer.visible = false
+		$CollisionShape2D.set_deferred("disabled", true)#.disabled = false
+
 func restore():
 	$TileMapLayer.visible = true
 	$CollisionShape2D.set_deferred("disabled", false)#.disabled = false
@@ -30,3 +31,9 @@ func build_Wall():
 			PlayerShared.ResourceWood -= 3
 		else:
 			PlayerShared.ResourceStone -= 3
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Enemy"):
+		health -=25
+		CheckHealth()
